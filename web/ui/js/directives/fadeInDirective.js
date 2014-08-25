@@ -1,4 +1,3 @@
-'use strict';
 
 directives.directive('fadeIn', function () {
     return {

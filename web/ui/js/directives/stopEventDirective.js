@@ -1,5 +1,3 @@
-'use strict';
-
 // this is the angular way to stop even propagation
 directives.directive('stopEvent', function () {
     return {
