@@ -1,0 +1,136 @@
+<div class="container-fluid" fade-in>
+  <div class="row">
+    <div class="col-md-11">
+    	<div class="row">
+		    <div class="col-md-6">
+		      <div class="list-group">
+		        <h5 class="list-group-item active">Latest</h5>
+		        <div class="list-group-item">Dapibus ac facilisis in</div>
+		        <div class="list-group-item">Morbi leo risus</div>
+		        <div class="list-group-item">Porta ac consectetur ac</div>
+		        <div class="list-group-item">Vestibulum at eros</div>
+		      </div>
+		    </div>
+		    <div class="col-md-6">
+		      <div class="list-group">
+		        <h5 class="list-group-item active">Post Board</h5>
+		        <div class="list-group-item">
+		          <table class="table table-striped">
+		            <thead>
+		              <tr>
+		                <th>#</th>
+		                <th>Date</th>
+		                <th>Task</th>
+		              </tr>
+		            </thead>
+		            <tbody>
+		              <tr>
+		                <td>1</td>
+		                <td>2014/09/11</td>
+		                <td>R10 MTP</td>
+		              </tr>
+		              <tr>
+		                <td>2</td>
+		                <td>2014/09/12</td>
+		                <td>TB</td>
+		              </tr>
+		              <tr>
+		                <td>3</td>
+		                <td>2014/09/15</td>
+		                <td>Comp Leave</td>
+		              </tr>
+		            </tbody>
+		          </table>
+		        </div>
+		      </div>
+			</div>
+	    </div>
+	    <div class="row">
+	    	<div class="col-md-3">
+		      <div class="list-group">
+		        <h5 class="list-group-item active">Personal List</h5>
+		        <div class="list-group-item">Dapibus ac facilisis in</div>
+		        <div class="list-group-item">Morbi leo risus</div>
+		        <div class="list-group-item">Porta ac consectetur ac</div>
+		        <div class="list-group-item">Vestibulum at eros</div>
+		      </div>
+		    </div>
+		    <div class="col-md-3">
+		      <div class="list-group">
+		        <h5 class="list-group-item active">Assign List</h5>
+		        <div class="list-group-item">Dapibus ac facilisis in</div>
+		        <div class="list-group-item">Morbi leo risus</div>
+		        <div class="list-group-item">Porta ac consectetur ac</div>
+		        <div class="list-group-item">Vestibulum at eros</div>
+		      </div>
+		    </div>
+		    <div class="col-md-3">
+		      <div class="list-group">
+		        <h5 class="list-group-item active">Action Pool</h5>
+		        <div class="list-group-item">Dapibus ac facilisis in</div>
+		        <div class="list-group-item">Morbi leo risus</div>
+		        <div class="list-group-item">Porta ac consectetur ac</div>
+		        <div class="list-group-item">Vestibulum at eros</div>
+		      </div>
+		    </div>
+		    <div class="col-md-3">
+		      <div class="list-group">
+		        <h5 class="list-group-item active">Group Action List</h5>
+		        <div class="list-group-item">Dapibus ac facilisis in</div>
+		        <div class="list-group-item">Morbi leo risus</div>
+		        <div class="list-group-item">Porta ac consectetur ac</div>
+		        <div class="list-group-item">Vestibulum at eros</div>
+		      </div>
+		    </div>
+	    </div>
+    </div>
+    <div class="col-md-1">
+    	<div class="btn-group btn-group-vertical">
+	        <button class="btn btn-default" type="button">M</button>
+	        <button class="btn btn-primary" data-toggle="modal" data-target="#taskCreate">+</button>
+	        <button class="btn btn-warning" type="button">C</button>
+	        <button class="btn btn-danger" type="button">S</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Notifications -->
+<div noty ng-repeat="n in notifications"/>
+
+<!-- Modal - Task Create -->
+<div class="modal fade" id="taskCreate" tabindex="-1" role="dialog" aria-labelledby="taskCreateLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Create a new task</h4>
+      </div>
+      <div class="modal-body">
+        <form role="form">
+		  <div class="form-group">
+		    <label for="exampleInputEmail1">Email address</label>
+		    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+		  </div>
+		  <div class="form-group">
+		    <label for="exampleInputPassword1">Password</label>
+		    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+		  </div>
+		  <div class="form-group">
+		    <label for="exampleInputFile">File input</label>
+		    <input type="file" id="exampleInputFile">
+		    <p class="help-block">Example block-level help text here.</p>
+		  </div>
+		  <div class="checkbox">
+		    <label>
+		      <input type="checkbox"> Check me out
+		    </label>
+		  </div>
+		  <button type="submit" class="btn btn-default">Submit</button>
+		  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		</form>
+      </div>
+    </div>
+  </div>
+</div>

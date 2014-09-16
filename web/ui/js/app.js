@@ -40,6 +40,9 @@ TM.config(['$routeProvider', '$locationProvider', '$httpProvider', function ($ro
     $routeProvider.when('/faq', {
         templateUrl: 'partials/faq.html'
     });
+    $routeProvider.when('/demo', {
+        templateUrl: 'partials/demo.html'
+    });
 
     // note that to minimize playground impact on app.js, we
     // are including just this simple route with a parameterized 
