@@ -1,4 +1,5 @@
 $( document ).ready(function() {
+
     $("li[target='_List']").mouseenter(function($this){
         $this.flip({
             direction:'tb',

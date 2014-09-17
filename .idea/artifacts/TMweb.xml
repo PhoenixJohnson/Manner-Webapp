@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="TMweb">
+    <output-path>$PROJECT_DIR$/out/artifacts/TMweb</output-path>
+    <root id="archive" name="TMweb.war">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Manner-Webapp" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="Manner-Webapp/web/Web" />
+    </root>
+  </artifact>
+</component>
