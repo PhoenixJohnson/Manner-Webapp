@@ -1,0 +1,77 @@
+<div class="container-fluid" fade-in>
+	<div>
+		Owner Id:<input type="text" name="userId" ng-model="item.owner.oid">
+		<!-- <button ng-click="restService.getItemsByOwner(item.owner.oid)">Get By Owner Id</button> -->
+		<button ng-click="restService.getAllItems()">GetAll</button>
+		<button data-target="#createItemDIV" data-toggle="modal">Create Item</button>
+	</div>
+	<hr />
+	<hr />
+	<div>
+		<!-- {{listItems}} -->
+		<table border="5">
+			<!-- ng-show="listItems.length"  -->
+			<thead>
+				<tr>
+					<td>line</td>
+					<td>id</td>
+					<td>subject</td>
+					<td>content</td>
+					<td>Owner</td>
+					<td>dueDate</td>
+					<td>deferDate</td>
+					<td>priority</td>
+					<td>category</td>
+					<td>remarks</td>
+					<td>level</td>
+					<td>group</td>
+					<td>OPERATES</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="item in listItems">
+					<td>{{$index+1}}</td>
+					<td>{{item.id}}</td>
+					<td>{{item.subject}}</td>
+					<td>{{item.content}}</td>
+					<td>{{item.owner.firstName}}{{item.owner.lastName}}</td>
+					<td>{{item.dueDate  | date:"yyyy-MM-dd hh:mm:ss" }}</td>
+					<td>{{item.deferDate  | date:"yyyy-MM-dd hh:mm:ss" }}</td>
+					<td>{{item.priority}}</td>
+					<td>{{item.category}}</td>
+					<td>{{item.remarks}}</td>
+					<td>{{item.level}}</td>
+					<td>{{item.group}}</td>
+					<td><button data-toggle="modal" data-target="#updateItemDIV">Update</button>
+					<!-- <button ng-click="restService.deleteItem(item.id)">Delete</button> --></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div class="modal fade" id="updateItemDIV" tabindex="-1" role="dialog" aria-labelledby="updateItemDIVLabel" aria-hidden="true">
+  <div class="modal-dialog">
+  	<div class="modal-content">
+  you can update item in this page.
+ 	</div>
+  </div>
+</div>
+
+<div class="modal fade"  id="createItemDIV" tabindex="-2" role="dialog" aria-labelledby="createItemDIVLabel" aria-hidden="true">
+<div class="modal-dialog">
+  	<div class="modal-content">
+	  <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Create a new item</h4>
+      </div>
+      <div class="modal-body">
+        <form role="form">
+		  
+		  <button type="submit" class="btn btn-default" ng-click="">Submit</button>
+		  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		</form>
+      </div>
+ 	</div>
+  </div>
+</div>
