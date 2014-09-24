@@ -18,5 +18,11 @@ $( document ).ready(function() {
     $("li[target='_List']").mouseleave(function($this){
         $this.revertFlip();
     });
+    
+    $("#sidetoggle").click(function(){
+    	 alert("Hello World on");  
+    });
+    
+    //TODO need transfer jQuery to AngulaJS directive
+    
 });
-
