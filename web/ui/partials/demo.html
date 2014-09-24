@@ -4,11 +4,43 @@
     	<div class="row">
 		    <div class="col-md-6">
 		      <div class="list-group">
-		        <h5 class="list-group-item active">Latest</h5>
-		        <div class="list-group-item">Dapibus ac facilisis in</div>
-		        <div class="list-group-item">Morbi leo risus</div>
-		        <div class="list-group-item">Porta ac consectetur ac</div>
-		        <div class="list-group-item">Vestibulum at eros</div>
+		        <h5 class="list-group-item active">Post Board</h5>
+		        <div class="list-group-item">
+		          <table class="table table-striped">
+		            <tbody>
+		              <tr data-toggle="modal" data-target="#taskCreate">
+		                <td><span class="bs-callout bs-callout-danger"></span></td>
+		                <td>SA</td>
+		                <td>Lorem ipsum dolor sit amet</td>
+		                <td>2014/09/11</td>
+		              </tr>
+		              <tr>
+		                <td><span class="bs-callout bs-callout-warning"></span></td>
+		                <td>A</td>	                
+		                <td>Consectetur adipiscing elit</td>
+		                <td>2014/09/12</td>
+		              </tr>
+		              <tr>
+		                <td><span class="bs-callout bs-callout-info"></span></td>
+		                <td>R</td>
+		                <td>Sed do eiusmod tempor incididunt ut</td>
+		                <td>2014/09/15</td>
+		              </tr>
+		              <tr>
+		                <td><span class="bs-callout bs-callout-danger"></span></td>
+		                <td>T</td>
+		                <td>Sed ut perspiciatis unde omnis</td>
+		                <td>2014/09/15</td>
+		              </tr>
+		              <tr>
+		                <td><span class="bs-callout bs-callout-warning"></span></td>
+		                <td>C</td>
+		                <td>Velit esse quam nihil molestiae consequatur</td>
+		                <td>2014/09/15</td>
+		              </tr>
+		            </tbody>
+		          </table>
+		        </div>
 		      </div>
 		    </div>
 		    <div class="col-md-6">
@@ -16,28 +48,31 @@
 		        <h5 class="list-group-item active">Post Board</h5>
 		        <div class="list-group-item">
 		          <table class="table table-striped">
-		            <thead>
-		              <tr>
-		                <th>#</th>
-		                <th>Date</th>
-		                <th>Task</th>
-		              </tr>
-		            </thead>
 		            <tbody>
 		              <tr>
-		                <td>1</td>
-		                <td>2014/09/11</td>
+		                <td><span class="glyphicon glyphicon-star"></span></td>
 		                <td>R10 MTP</td>
+		                <td>2014/09/11</td>
 		              </tr>
 		              <tr>
-		                <td>2</td>
-		                <td>2014/09/12</td>
+		                <td><span class="glyphicon glyphicon-star-empty"></span></td>	                
 		                <td>TB</td>
+		                <td>2014/09/12</td>
 		              </tr>
 		              <tr>
-		                <td>3</td>
-		                <td>2014/09/15</td>
+		                <td><span class="glyphicon glyphicon-star-empty"></span></td>
 		                <td>Comp Leave</td>
+		                <td>2014/09/15</td>
+		              </tr>
+		              <tr>
+		                <td><span class="glyphicon glyphicon-star-empty"></span></td>
+		                <td>Comp Leave</td>
+		                <td>2014/09/15</td>
+		              </tr>
+		              <tr>
+		                <td><span class="glyphicon glyphicon-star"></span></td>
+		                <td>Comp Leave</td>
+		                <td>2014/09/15</td>
 		              </tr>
 		            </tbody>
 		          </table>
@@ -75,7 +110,7 @@
     </div>
     <div class="col-md-1">
     	<div class="btn-group btn-group-vertical">
-	        <button class="btn btn-default" type="button">M</button>
+	        <button class="btn btn-default" id="sidetoggle" type="button">M</button>
 	        <button class="btn btn-primary" data-toggle="modal" data-target="#taskCreate">+</button>
 	        <button class="btn btn-warning" type="button">C</button>
 	        <button class="btn btn-danger" type="button">S</button>
@@ -84,6 +119,32 @@
     </div>
   </div>
 </div>
+
+<!-- TODO - Side Nav -->
+<!--<div class="side-nav">
+    <ul>
+      <li>
+        <a class="" href="http://www.gv.com/team/">
+          <span>Team</span> <i class="icon team"></i>
+        </a>
+      </li>
+      <li>
+        <a class="" href="http://www.gv.com/portfolio/">
+          <span>Portfolio</span> <i class="icon portfolio"></i>
+        </a>
+      </li>
+      <li>
+        <a class="" href="http://www.gv.com/about/">
+          <span>About</span> <i class="icon about"></i>
+        </a>
+      </li>
+      <li>
+        <a class="" href="http://www.gv.com/library/">
+          <span>Library</span> <i class="icon library"></i>
+        </a>
+      </li>
+    </ul>
+</div>-->
 
 <!-- Notifications -->
 <div noty ng-repeat="n in notifications"/>
