@@ -2819,6 +2819,7 @@ select[multiple].navbar-form .btn {
 
 .navbar-inverse .navbar-brand {
     color: #ffffff;
+    text-shadow: 0px 0px 10px #5f5f60;
 }
 
 .navbar-inverse .navbar-brand:hover,
@@ -2902,8 +2903,9 @@ select[multiple].navbar-form .btn {
 }
 
 .navbar-inverse .navbar-nav > .open > .dropdown-menu {
-    background-color: #34495e;
-    padding: 3px 4px;
+    background-color: #c0ff9f;
+    opacity:0.90;
+    filter:alpha(opacity=90);
 }
 
 .navbar-inverse .navbar-nav > .open > .dropdown-menu > li > a {
