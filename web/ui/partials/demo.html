@@ -1,7 +1,7 @@
 <div class="container-fluid" fade-in>
   <div class="row">
     <div class="col-md-11">
-    	<div class="row">
+    <div class="row">
 		    <div class="col-md-6">
 		      <div class="list-group">
 		        <h5 class="list-group-item active">Post Board</h5>
@@ -29,6 +29,41 @@
 		                <td><span class="glyphicon glyphicon-{{l.status}}"></span></td>
 		                <td>{{l.desc}}</td>
 		                <td>{{l.date}}</td>
+		              </tr>
+		            </tbody>
+		          </table>
+		        </div>
+		      </div>
+			</div>
+	    </div>
+    	<div class="row">
+		    <div class="col-md-6">
+		      <div class="list-group">
+		        <h5 class="list-group-item active">Post Board</h5>
+		        <div class="list-group-item">
+		          <table class="table table-striped">
+		            <tbody>
+		              <tr data-toggle="modal" data-target="#taskCreate" ng-repeat="p in items._embedded.items">
+		                <td><span class="bs-callout bs-callout-{{p.status}}"></span></td>
+		                <td>{{p.updatedBy}}</td>
+		                <td>{{p.version}}</td>
+		                <td>{{p.content}}</td>
+		              </tr>
+		            </tbody>
+		          </table>
+		        </div>
+		      </div>
+		    </div>
+		    <div class="col-md-6">
+		      <div class="list-group">
+		        <h5 class="list-group-item active">Latest</h5>
+		        <div class="list-group-item">
+		          <table class="table table-striped">
+		            <tbody>
+		              <tr data-toggle="modal" data-target="#taskCreate{{l.id}}" ng-repeat="l in users._embedded.users">
+		                <td><span class="glyphicon glyphicon-{{l.firstName}}"></span></td>
+		                <td>{{l.lastName}}</td>
+		                <td>{{l.email}}</td>
 		              </tr>
 		            </tbody>
 		          </table>

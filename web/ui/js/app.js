@@ -8,10 +8,10 @@ var TM = angular.module('TM',
         'ngSanitize', // for html-bind in ckeditor
 //        'ui.ace', // ace code editor
         'ui.bootstrap', // jquery ui bootstrap
-        '$strap.directives' // angular strap
+        '$strap.directives', // angular strap
+        'mannerControllers',
+        'mannerServices'
     ]);
-
- 
 
 var filters = angular.module('TM.filters', []);
 var directives = angular.module('TM.directives', []);
@@ -41,8 +41,13 @@ TM.config(['$routeProvider', '$locationProvider', '$httpProvider', function ($ro
         templateUrl: 'partials/faq.html'
     });
     $routeProvider.when('/demo', {
-        templateUrl: 'partials/demo.html'
+        templateUrl: 'partials/demo.html',
+        controller:"demoCtrl"
     });
+//    $routeProvider.when('/tonyTest',{
+//    	templateUrl:"test/tonyTest.html",
+//    	controller:"tonyTestCtrl"
+//    });
     $routeProvider.when('/httpdemo',{
     	templateUrl: 'partials/httpdemo.html'
     });
@@ -139,6 +144,6 @@ TM.run(function ($rootScope, $location, $http, $timeout, AuthService, RESTServic
         {id: "2", status: "star-empty", desc: "Lorem ipsum dolor sit amet", date:"2014/09/12"},
         {id: "3", status: "star", desc: "Lorem ipsum dolor sit amet", date:"2014/09/12"},
         {id: "4", status: "star-empty", desc: "Lorem ipsum dolor sit amet", date:"2014/09/14"},
-        {id: "5", status: "star-empty", desc: "Lorem ipsum dolor sit amet123", date:"2014/09/16"}
+        {id: "5", status: "star-empty", desc: "Lorem ipsum dolor sit amet", date:"2014/09/16"}
     ];
 });
