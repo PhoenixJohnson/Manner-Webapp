@@ -125,6 +125,20 @@ TM.run(function ($rootScope, $location, $http, $timeout, AuthService, RESTServic
         {key: "What are the pre-requisites for running the seed?", value: "Just an HTTP server.  Add your own backend."},
         {key: "How do I change styling (css)?", value: "Change Bootstrap LESS and rebuild with the build.sh script.  This will update the appropriate css/image/font files."}
     ];
-
-
+    
+    // demo.html test data
+    $rootScope.postBoard = [
+        {status: "danger", type: "SA", desc: "Lorem ipsum dolor sit amet", date:"2014/09/11"},
+        {status: "warning", type: "A", desc: "Consectetur adipiscing elit", date:"2014/09/12"},
+        {status: "info", type: "R", desc: "Sed do eiusmod tempor incididunt ut", date:"2014/09/13"},
+        {status: "danger", type: "T", desc: "Sed ut perspiciatis unde omnis", date:"2014/09/14"},
+        {status: "warning", type: "C", desc: "Velit esse quam nihil molestiae consequatur", date:"2014/09/15"}
+	];
+    $rootScope.latest = [
+        {id: "1", status: "star", desc: "Lorem ipsum dolor sit amet", date:"2014/09/11"},
+        {id: "2", status: "star-empty", desc: "Lorem ipsum dolor sit amet", date:"2014/09/12"},
+        {id: "3", status: "star", desc: "Lorem ipsum dolor sit amet", date:"2014/09/12"},
+        {id: "4", status: "star-empty", desc: "Lorem ipsum dolor sit amet", date:"2014/09/14"},
+        {id: "5", status: "star-empty", desc: "Lorem ipsum dolor sit amet", date:"2014/09/16"}
+    ];
 });
