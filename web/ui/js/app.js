@@ -41,7 +41,8 @@ TM.config(['$routeProvider', '$locationProvider', '$httpProvider', function ($ro
         templateUrl: 'partials/faq.html'
     });
     $routeProvider.when('/demo', {
-        templateUrl: 'partials/demo.html'
+        templateUrl: 'partials/demo.html',
+        controller:"demoController"
     });
     $routeProvider.when('/httpdemo',{
     	templateUrl: 'partials/httpdemo.html'
