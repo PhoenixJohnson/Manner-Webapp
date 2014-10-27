@@ -9,8 +9,8 @@ var TM = angular.module('TM',
 //        'ui.ace', // ace code editor
         'ui.bootstrap', // jquery ui bootstrap
         '$strap.directives', // angular strap
-        'mannerControllers',
-        'mannerServices'
+//        'mannerControllers',
+//        'mannerServices'
     ]);
 
 var filters = angular.module('TM.filters', []);
@@ -51,6 +51,15 @@ TM.config(['$routeProvider', '$locationProvider', '$httpProvider', function ($ro
     $routeProvider.when('/httpdemo',{
     	templateUrl: 'partials/httpdemo.html'
     });
+    $routeProvider.when('/demoEason', {
+            templateUrl: 'partials/demoEason.html'
+        });
+        $routeProvider.when('/demoEason2', {
+            templateUrl: 'partials/demoEason2.html'
+        });
+        $routeProvider.when('/demoEason3', {
+            templateUrl: 'partials/demoEason3.html'
+        });
 
     // note that to minimize playground impact on app.js, we
     // are including just this simple route with a parameterized 
