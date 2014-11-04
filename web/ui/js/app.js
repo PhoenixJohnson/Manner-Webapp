@@ -4,11 +4,11 @@ var TM = angular.module('TM',
         'TM.directives', // custom directives
         'ngRoute',
         'ngGrid', // angular grid
-        'ui', // angular ui
-        'ngSanitize', // for html-bind in ckeditor
+//        'ui', // angular ui
+//        'ngSanitize', // for html-bind in ckeditor
 //        'ui.ace', // ace code editor
-        'ui.bootstrap', // jquery ui bootstrap
-        '$strap.directives', // angular strap
+//        'ui.bootstrap', // jquery ui bootstrap
+//        '$strap.directives', // angular strap
         'mannerControllers',
         'mannerServices'
     ]);
