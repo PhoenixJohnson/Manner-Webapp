@@ -1,20 +1,25 @@
 // declare top-level module which depends on filters,and services
 var TM = angular.module('TM',
-    [   'TM.filters',
+    [
+        'TM.filters',
         'TM.directives', // custom directives
+        'TM.controllers',
+        'TM.services',
         'ngRoute',
-        'ngGrid', // angular grid
+        'ngGrid'    // angular grid
 //        'ui', // angular ui
 //        'ngSanitize', // for html-bind in ckeditor
 //        'ui.ace', // ace code editor
 //        'ui.bootstrap', // jquery ui bootstrap
 //        '$strap.directives', // angular strap
-        'mannerControllers',
-        'mannerServices'
+//        'mannerControllers',
+//        'mannerServices'
     ]);
 
 var filters = angular.module('TM.filters', []);
 var directives = angular.module('TM.directives', []);
+var controllers = angular.module('TM.controllers',[]);
+var services = angular.module('TM.services',['ngResource']);
 
 // bootstrap angular
 TM.config(['$routeProvider', '$locationProvider', '$httpProvider', function ($routeProvider, $locationProvider, $httpProvider) {
@@ -42,7 +47,7 @@ TM.config(['$routeProvider', '$locationProvider', '$httpProvider', function ($ro
     });
     $routeProvider.when('/demo', {
         templateUrl: 'partials/demo.html',
-        controller:"demoCtrl"
+        controller:"DataRetrieve"
     });
 //    $routeProvider.when('/tonyTest',{
 //    	templateUrl:"test/tonyTest.html",

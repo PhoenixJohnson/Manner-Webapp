@@ -57,6 +57,33 @@ TM.factory('RESTService',
  }
 );
 
+//items
+services.factory('Items', [ '$resource','TM.config',function($resource,config) {
+    return $resource(config.RESTAPIBASEURL+'items', {}, {
+        'query' : {
+            method : 'GET',
+            isArray : false,
+            cache : false,
+            responseType:'json'
+        },
+        'update' : {}
+    });
+} ]);
+//Users
+services.factory('Users', [ '$resource','TM.config',function($resource,config) {
+    return $resource(config.RESTAPIBASEURL+'users', {}, {
+        'query' : {
+            method : 'GET',
+            isArray : false,
+            cache : false,
+            responseType:'json'
+        },
+        'update' : {}
+    });
+} ]);
+
+
+
 
 //simple auth service that can use a lot of work... 
 TM.factory('AuthService',

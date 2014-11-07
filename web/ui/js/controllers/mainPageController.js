@@ -1,6 +1,4 @@
-var mannerControllers=angular.module('mannerControllers',[]);
-
-mannerControllers.controller('demoCtrl',['$scope','Items','Users',function($scope, Items,Users){
+controllers.controller('DataRetrieve',['$scope','Items','Users',function($scope, Items,Users){
 	$scope.items =Items.query();
 	$scope.users=Users.query();
 }]);
