@@ -6,14 +6,15 @@ var TM = angular.module('TM',
         'TM.controllers',
         'TM.services',
         'ngRoute',
-        'ngGrid'    // angular grid
+        'ngGrid',    // angular grid
 //        'ui', // angular ui
 //        'ngSanitize', // for html-bind in ckeditor
 //        'ui.ace', // ace code editor
 //        'ui.bootstrap', // jquery ui bootstrap
 //        '$strap.directives', // angular strap
 //        'mannerControllers',
-//        'mannerServices'
+//      ******Plugins******
+        'clockPlugin'
     ]);
 
 var filters = angular.module('TM.filters', []);
