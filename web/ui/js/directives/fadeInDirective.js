@@ -1,5 +1,5 @@
 
-directives.directive('fadeIn', function () {
+TM.directive('fadeIn', function () {
     return {
         compile: function (elm) {
             $(elm).css('opacity', 0.0);

@@ -54,49 +54,27 @@
 <div ng-view></div>
 
 <!-- footer -->
-<!--<div ng-include="'partials/navbar-bottom.html'"></div>-->
 
 <script src="js/vendor/Jquery/jquery-1.11.1.min.js"></script>
-
 <script src="js/vendor/bootstrap/bootstrap.min.js"></script>
-
-<!--<script src="js/vendor/jquery-ui/jquery-ui.min.js"></script>-->
-
 <script src="js/vendor/angular/angular.min.js"></script>
 <script src="js/vendor/angular/angular-resource.js"></script>
 <script src="js/vendor/angular/angular-route.min.js"></script>
-
-<!--<script src="js/vendor/angularui/angular-ui.js"></script>-->
-
-<!--<script src="js/vendor/Blur/StackBlur.js"></script>-->
-
-<!--<script src="js/vendor/Blur/html2canvas.js"></script>-->
-
 <script src="js/vendor/ng-grid/ng-grid.js"></script>
-
-<!--<script src="js/vendor/Flip/jquery.flip.min.js"></script>-->
+<script src="js/vendor/D3/d3.min.js"></script>
+<!--<script src="js/vendor/HighCharts/highcharts-all.js"></script>-->
+<script src="js/vendor/HighCharts/highcharts.js"></script>
+<script src="js/vendor/HighCharts/highcharts-3d.js"></script>
 
 <script src="js/vendor/bootstrap/ui-bootstrap-tpls-0.1.0-SNAPSHOT.js"></script>
 
 
+<!-- External tools inputting -->
+
+<script src="js/ExTools/exporting.js"></script>
+
 <!-- for ui notifications -->
 <script src="js/notificationManager.js"></script>
-
-<!-- enables rendering of injected html -->
-
-<!--<script src="js/vendor/angular/angular-sanitize.min.js"></script>-->
-
-<!-- angular strap -->
-<!-- TODO move from cdn to local -->
-<!--<script src="js/vendor/angularstrap/angular-strap.min.js"></script>-->
-
-<!-- ACE Editor -->
-<!--<script src="js/vendor/ui-ace/ace.js"></script>-->
-<!--<script src="js/vendor/ui-ace/ui-ace.js"></script>-->
-<!-- <script src="https://raw.github.com/ajaxorg/ace-builds/master/src/theme-xcode.js"></script> -->
-
-<!-- TODO consider using NPM/Bower to install third party libs -->
-
 
 <!--  TODO compile/optimise these during build -->
 
@@ -109,23 +87,19 @@
 
 <script src="js/directives/fadeInDirective.js"></script>
 <script src="js/directives/stopEventDirective.js"></script>
-<script src="js/Plugins/Clock.js"></script>
-
+<script src="js/directives/reportDirective.js"></script>
 <script src="js/directives/notifications/notyDirective.js"></script>
 
-<!-- example area for ui elements (non-production) -->
+
 <script src="playground/playground.js"></script>
-
-<!--<script type="text/javascript" src="js/vendor/noty-2.1.0/js/noty/jquery.noty.js"></script>-->
-
-<!--<script type="text/javascript" src="js/vendor/noty-2.1.0/js/noty/layouts/bottomRight.js"></script>-->
-
-<!--<script type="text/javascript" src="js/vendor/noty-2.1.0/js/noty/themes/nucleus.js"></script>-->
+<script src="js/Plugins/Clock.js"></script>
 
 <script type="text/javascript" src="js/controllers/mainPageController.js"></script>
-
 <script src="js/controllers/pluginControllers.js"></script>
-<!--<script type="text/javascript" src="js/services/mannerServices.js"></script>-->
+<script src="js/controllers/reportController.js"></script>
+
+
+<script src="js/Reports/reportRouter.js"></script>
 
 </body>
 </html>

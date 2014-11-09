@@ -58,7 +58,7 @@ TM.factory('RESTService',
 );
 
 //items
-services.factory('Items', [ '$resource','TM.config',function($resource,config) {
+TM.factory('Items', [ '$resource','TM.config',function($resource,config) {
     return $resource(config.RESTAPIBASEURL+'items', {}, {
         'query' : {
             method : 'GET',
@@ -70,7 +70,7 @@ services.factory('Items', [ '$resource','TM.config',function($resource,config) {
     });
 } ]);
 //Users
-services.factory('Users', [ '$resource','TM.config',function($resource,config) {
+TM.factory('Users', [ '$resource','TM.config',function($resource,config) {
     return $resource(config.RESTAPIBASEURL+'users', {}, {
         'query' : {
             method : 'GET',

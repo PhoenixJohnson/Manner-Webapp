@@ -1,4 +1,4 @@
-controllers.controller('DataRetrieve',['$scope','Items','Users',function($scope, Items,Users){
+TM.controller('DataRetrieve',['$scope','Items','Users',function($scope, Items,Users){
 	$scope.items =Items.query();
 	$scope.users=Users.query();
 }]);

@@ -1,5 +1,5 @@
 
-directives.directive('noty', function () {
+TM.directive('noty', function () {
 
     return {
         restrict: 'A',

@@ -3,10 +3,7 @@
     {
         "company_name": "Team Manner",
         "copyright_year": "2014",
-        "hero_button": "Get Started",
-        "landing_section_1": "Flexible",
-        "landing_section_2": "Feature Rich",
-        "landing_section_3": "Seed"
+        "RESTAPIBASEURL": "http://localhost:8080/manner-ci/api/"
     }
 
 ]

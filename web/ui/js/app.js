@@ -1,11 +1,13 @@
 // declare top-level module which depends on filters,and services
 var TM = angular.module('TM',
     [
-        'TM.filters',
-        'TM.directives', // custom directives
-        'TM.controllers',
-        'TM.services',
+//        'TM.filters',
+//        'TM.directives', // custom directives
+//        'TM.controllers',
+//        'TM.services',
+        'TM.reports',
         'ngRoute',
+        'ngResource',
         'ngGrid',    // angular grid
 //        'ui', // angular ui
 //        'ngSanitize', // for html-bind in ckeditor
@@ -17,10 +19,11 @@ var TM = angular.module('TM',
         'clockPlugin'
     ]);
 
-var filters = angular.module('TM.filters', []);
-var directives = angular.module('TM.directives', []);
-var controllers = angular.module('TM.controllers',[]);
-var services = angular.module('TM.services',['ngResource']);
+//var filters = angular.module('TM.filters', []);
+//var directives = angular.module('TM.directives', []);
+//var controllers = angular.module('TM.controllers',[]);
+//var services = angular.module('TM.services',['ngResource']);
+var reports = angular.module('TM.reports',['ngRoute']);
 
 // bootstrap angular
 TM.config(['$routeProvider', '$locationProvider', '$httpProvider', function ($routeProvider, $locationProvider, $httpProvider) {
@@ -47,7 +50,7 @@ TM.config(['$routeProvider', '$locationProvider', '$httpProvider', function ($ro
         templateUrl: 'partials/faq.html'
     });
     $routeProvider.when('/demo', {
-        templateUrl: 'partials/demo.html',
+        templateUrl: 'partials/Main.html',
         controller:"DataRetrieve"
     });
 //    $routeProvider.when('/tonyTest',{
@@ -56,6 +59,10 @@ TM.config(['$routeProvider', '$locationProvider', '$httpProvider', function ($ro
 //    });
     $routeProvider.when('/httpdemo',{
     	templateUrl: 'partials/httpdemo.html'
+    });
+
+    $routeProvider.when('/Reports',{
+        templateUrl: 'reports/Main.html'
     });
 
     // note that to minimize playground impact on app.js, we
@@ -88,6 +95,11 @@ TM.run(function ($rootScope, $location, $http, $timeout, AuthService, RESTServic
             $rootScope.constants = data[0];
         }
     );
+    // async load dynamic values.
+    $rootScope.values = [];
+    $rootScope.restService.get('data/values.json',function(data){
+       $rootScope.values = data[0];
+    });
 
     // async load data do be used in table (playgound grid widget)
     $rootScope.listData = [];
@@ -137,7 +149,7 @@ TM.run(function ($rootScope, $location, $http, $timeout, AuthService, RESTServic
         {key: "How do I change styling (css)?", value: "Change Bootstrap LESS and rebuild with the build.sh script.  This will update the appropriate css/image/font files."}
     ];
     
-    // demo.html test data
+    // main.html test data
     $rootScope.postBoard = [
         {status: "danger", type: "SA", desc: "Lorem ipsum dolor sit amet", date:"2014/09/11"},
         {status: "warning", type: "A", desc: "Consectetur adipiscing elit", date:"2014/09/12"},
