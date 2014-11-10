@@ -12,18 +12,17 @@ var TM = angular.module('TM',
 //        'ui', // angular ui
 //        'ngSanitize', // for html-bind in ckeditor
 //        'ui.ace', // ace code editor
-<<<<<<< HEAD
-        'ui.bootstrap', // jquery ui bootstrap
-        '$strap.directives', // angular strap
+//        'ui.bootstrap', // jquery ui bootstrap
+//        '$strap.directives', // angular strap
 //        'mannerControllers',
 //        'mannerServices'
-=======
+
 //        'ui.bootstrap', // jquery ui bootstrap
 //        '$strap.directives', // angular strap
 //        'mannerControllers',
 //      ******Plugins******
         'clockPlugin'
->>>>>>> 31ea53970e6b98e7b04136837194aa3fb843ef50
+
     ]);
 
 //var filters = angular.module('TM.filters', []);
