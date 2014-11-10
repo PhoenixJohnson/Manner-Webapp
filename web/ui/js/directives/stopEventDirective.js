@@ -1,5 +1,5 @@
 // this is the angular way to stop even propagation
-directives.directive('stopEvent', function () {
+TM.directive('stopEvent', function () {
     return {
         restrict: 'A',
         link: function (scope, element, attr) {
