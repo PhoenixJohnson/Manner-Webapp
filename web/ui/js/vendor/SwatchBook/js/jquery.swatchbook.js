@@ -4,307 +4,310 @@
  *
  * Licensed under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
- * 
+ *
  * Copyright 2012, Codrops
  * http://www.codrops.com
  */
 
-( function( window, $, undefined ) {
-	
+(function(window, $, undefined) {
+
 	'use strict';
 
-	var Modernizr			= window.Modernizr;
+	var Modernizr = window.Modernizr;
 
-	jQuery.fn.reverse		= [].reverse;
-	
-	$.SwatchBook			= function( options, element ) {
-		
-		this.$el	= $( element );
-		this._init( options );
-		
+	jQuery.fn.reverse = [].reverse;
+
+	$.SwatchBook = function(options, element) {
+
+		this.$el = $(element);
+		this._init(options);
+
 	};
 
-	$.SwatchBook.defaults	= {
+	$.SwatchBook.defaults = {
 		// index of initial centered item
-		center		: 6,
+		center: 6,
 		// number of degrees that is between each item
-		angleInc	: 8,
-		speed		: 700,
-		easing		: 'ease',
+		angleInc: 8,
+		speed: 700,
+		easing: 'ease',
 		// amount in degrees for the opened item's next sibling
-		proximity	: 45,
+		proximity: 45,
 		// amount in degrees between the opened item's next siblings
-		neighbor	: 4,
+		neighbor: 4,
 		// animate on load
-		onLoadAnim	: true,
+		onLoadAnim: true,
 		// if it should be closed by default
-		initclosed	: false,
+		initclosed: false,
 		// index of the element that when clicked, triggers the open/close function
 		// by default there is no such element
-		closeIdx	: -1
+		closeIdx: -1
 	};
 
-	$.SwatchBook.prototype	= {
+	$.SwatchBook.prototype = {
 
-		_init			: function( options ) {
-			
-			this.options	= $.extend( true, {}, $.SwatchBook.defaults, options );
+		_init: function(options) {
 
-			this.$items		= this.$el.children( 'div' );
-			this.itemsCount	= this.$items.length;
-			this.current	= -1;
-			this.support	= Modernizr.csstransitions;
-			this.cache		= [];
-			
-			if( this.options.onLoadAnim ) {
+			this.options = $.extend(true, {}, $.SwatchBook.defaults, options);
+
+			this.$items = this.$el.children('div');
+			this.itemsCount = this.$items.length;
+			this.current = -1;
+			this.support = Modernizr.csstransitions;
+			this.cache = [];
+
+			if (this.options.onLoadAnim) {
 
 				this._setTransition();
 
 			}
 
-			if( !this.options.initclosed ) {
+			if (!this.options.initclosed) {
 
-				this._center( this.options.center, this.options.onLoadAnim );
+				this._center(this.options.center, this.options.onLoadAnim);
 
-			}
-			else {
+			} else {
 
-				this.isClosed	= true;
-				if( !this.options.onLoadAnim ) {
+				this.isClosed = true;
+				if (!this.options.onLoadAnim) {
 
 					this._setTransition();
 
 				}
 
 			}
-			
-			this._initEvents();
-			
-		},
-		_setTransition	: function() {
 
-			if( !this.support ) {
+			this._initEvents();
+
+		},
+		_setTransition: function() {
+
+			if (!this.support) {
 
 				return false;
 
 			}
 
-			this.$items.css( {
+			this.$items.css({
 				'-webkit-transition': '-webkit-transform ' + this.options.speed + 'ms ' + this.options.easing,
-				'-moz-transition'	: '-moz-transform ' + this.options.speed + 'ms ' + this.options.easing,
-				'-o-transition'		: '-o-transform ' + this.options.speed + 'ms ' + this.options.easing,
-				'-ms-transition'	: '-ms-transform ' + this.options.speed + 'ms ' + this.options.easing,
-				'transition'		: 'transform ' + this.options.speed + 'ms ' + this.options.easing
-			} );
+				'-moz-transition': '-moz-transform ' + this.options.speed + 'ms ' + this.options.easing,
+				'-o-transition': '-o-transform ' + this.options.speed + 'ms ' + this.options.easing,
+				'-ms-transition': '-ms-transform ' + this.options.speed + 'ms ' + this.options.easing,
+				'transition': 'transform ' + this.options.speed + 'ms ' + this.options.easing
+			});
 
 		},
-		_openclose		: function() {
+		_openclose: function() {
 
 			var _self = this;
 
-			if( this.isClosed ) {
+			if (this.isClosed) {
 
-				this._center( this.options.center, true );
+				this._center(this.options.center, true);
 
-			}
-			else {
+			} else {
 
-				this.$items.each( function( i ) {
+				this.$items.each(function(i) {
 
-					var transformStr	= 'rotate(0deg)';
+					var transformStr = 'rotate(0deg)';
 
-					$( this ).css( {
-						'-webkit-transform'	: transformStr,
-						'-moz-transform'	: transformStr,
-						'-o-transform'		: transformStr,
-						'-ms-transform'		: transformStr,
-						'transform'			: transformStr
-					} );
+					$(this).css({
+						'-webkit-transform': transformStr,
+						'-moz-transform': transformStr,
+						'-o-transform': transformStr,
+						'-ms-transform': transformStr,
+						'transform': transformStr
+					});
 
-				} );
+				});
 
 			}
 
 			this.isClosed = !this.isClosed;
 
 		},
-		_center			: function( idx, anim ) {
+		_center: function(idx, anim) {
 
 			var _self = this;
 
-			this.$items.each( function( i ) {
+			this.$items.each(function(i) {
 
-				var transformStr	= 'rotate(' + ( _self.options.angleInc * ( i - idx ) ) + 'deg)';
+				var transformStr = 'rotate(' + (_self.options.angleInc * (i - idx)) + 'deg)';
 
-				$( this ).css( {
-					'-webkit-transform'	: transformStr,
-					'-moz-transform'	: transformStr,
-					'-o-transform'		: transformStr,
-					'-ms-transform'		: transformStr,
-					'transform'			: transformStr
-				} );
+				$(this).css({
+					'-webkit-transform': transformStr,
+					'-moz-transform': transformStr,
+					'-o-transform': transformStr,
+					'-ms-transform': transformStr,
+					'transform': transformStr
+				});
 
-			} );
+			});
 
 		},
-		_initEvents		: function() {
+		_initEvents: function() {
 
 			var _self = this;
-
-			this.$items.on( 'click.swatchbook', function( event ) {
+			this.$items.on('mouseover.swatchbook', function(event) {
 				//console.log(this)
-				var $item	= $( this ),
-					itmIdx	= $item.index();
+				var $item = $(this),
+					itmIdx = $item.index();
+				console.log($item.attr("class"))
+				if ($item.attr("class") == "ff-active") {
+					console.log($item.attr("pUrl"))
+					console.log("-----------!@!@@!@!")
 
-				if( itmIdx !== _self.current ) {
+				}
+			});
+			this.$items.on('click.swatchbook', function(event) {
+				//console.log(this)
+				var $item = $(this),
+					itmIdx = $item.index();
 
-					if( _self.options.closeIdx !== -1 && itmIdx === _self.options.closeIdx ) {
+				if (itmIdx !== _self.current) {
+
+					if (_self.options.closeIdx !== -1 && itmIdx === _self.options.closeIdx) {
 
 						_self._openclose();
 						_self._setCurrent();
 
+					} else {
+
+						_self._setCurrent($item);
+
+						var transformStr = 'rotate(0deg)';
+
+						$item.css({
+							'-webkit-transform': transformStr,
+							'-moz-transform': transformStr,
+							'-o-transform': transformStr,
+							'-ms-transform': transformStr,
+							'transform': transformStr
+						});
+
+						_self._rotateSiblings($item);
+
 					}
-					else {
 
-						_self._setCurrent( $item );
-
-						var transformStr	= 'rotate(0deg)';
-
-						$item.css( {
-							'-webkit-transform'	: transformStr,
-							'-moz-transform'	: transformStr,
-							'-o-transform'		: transformStr,
-							'-ms-transform'		: transformStr,
-							'transform'			: transformStr
-						} );
-
-						_self._rotateSiblings( $item );
-
-					}
-
-				}
-				else
-				{
+				} else {
 					console.log('----self click-----')
 					console.log($item)
 					console.log($item.attr("pUrl"))
 					//window.open=$item.attr("pUrl");
-					window.open($item.attr("pUrl"),'','width=790,height=590');
-					
+					window.open($item.attr("pUrl"), '', 'width=790,height=590');
+
 				}
 
-			} );
+			});
 
 		},
-		_rotateSiblings	: function( $item ) {
+		_rotateSiblings: function($item) {
 
-			var _self		= this,
-				idx			= $item.index(),
-				$cached		= this.cache[ idx ],
+			var _self = this,
+				idx = $item.index(),
+				$cached = this.cache[idx],
 				$siblings;
 
-			if( $cached ) {
+			if ($cached) {
 
 				$siblings = $cached;
 
-			}
-			else {
+			} else {
 
 				$siblings = $item.siblings();
-				this.cache[ idx ] = $siblings;
+				this.cache[idx] = $siblings;
 
 			}
 
-			$siblings.each( function( i ) {
+			$siblings.each(function(i) {
 
-				var rotateVal	= ( i < idx ) ?
-									_self.options.angleInc * ( i - idx ) :
-									( i - idx === 1 ) ? _self.options.proximity : _self.options.proximity + ( i - idx - 1 ) * _self.options.neighbor;
+				var rotateVal = (i < idx) ?
+					_self.options.angleInc * (i - idx) :
+					(i - idx === 1) ? _self.options.proximity : _self.options.proximity + (i - idx - 1) * _self.options.neighbor;
 
-				var transformStr	= 'rotate(' + rotateVal + 'deg)';
+				var transformStr = 'rotate(' + rotateVal + 'deg)';
 
-				$( this ).css( {
-					'-webkit-transform'	: transformStr,
-					'-moz-transform'	: transformStr,
-					'-o-transform'		: transformStr,
-					'-ms-transform'		: transformStr,
-					'transform'			: transformStr
-				} );
+				$(this).css({
+					'-webkit-transform': transformStr,
+					'-moz-transform': transformStr,
+					'-o-transform': transformStr,
+					'-ms-transform': transformStr,
+					'transform': transformStr
+				});
 
-			} );
+			});
 
 		},
-		_setCurrent		: function( $el ) {
+		_setCurrent: function($el) {
 
 			this.current = $el ? $el.index() : -1;
-			this.$items.removeClass( 'ff-active' );
-			if( $el ) {
+			this.$items.removeClass('ff-active');
+			if ($el) {
 
-				$el.addClass( 'ff-active' );
+				$el.addClass('ff-active');
 
 			}
 
 		}
 
 	};
-	
-	var logError			= function( message ) {
 
-		if ( window.console ) {
+	var logError = function(message) {
 
-			window.console.error( message );
-		
+		if (window.console) {
+
+			window.console.error(message);
+
 		}
 
 	};
-	
-	$.fn.swatchbook			= function( options ) {
-		
-		if ( typeof options === 'string' ) {
-			
-			var args = Array.prototype.slice.call( arguments, 1 );
-			
+
+	$.fn.swatchbook = function(options) {
+
+		if (typeof options === 'string') {
+
+			var args = Array.prototype.slice.call(arguments, 1);
+
 			this.each(function() {
-			
-				var instance = $.data( this, 'swatchbook' );
-				
-				if ( !instance ) {
 
-					logError( "cannot call methods on swatchbook prior to initialization; " +
-					"attempted to call method '" + options + "'" );
+				var instance = $.data(this, 'swatchbook');
+
+				if (!instance) {
+
+					logError("cannot call methods on swatchbook prior to initialization; " +
+						"attempted to call method '" + options + "'");
 					return;
-				
-				}
-				
-				if ( !$.isFunction( instance[options] ) || options.charAt(0) === "_" ) {
 
-					logError( "no such method '" + options + "' for swatchbook instance" );
+				}
+
+				if (!$.isFunction(instance[options]) || options.charAt(0) === "_") {
+
+					logError("no such method '" + options + "' for swatchbook instance");
 					return;
-				
-				}
-				
-				instance[ options ].apply( instance, args );
-			
-			});
-		
-		} 
-		else {
-		
-			this.each(function() {
-				
-				var instance = $.data( this, 'swatchbook' );
-				if ( !instance ) {
 
-					$.data( this, 'swatchbook', new $.SwatchBook( options, this ) );
-				
 				}
+
+				instance[options].apply(instance, args);
 
 			});
-		
+
+		} else {
+
+			this.each(function() {
+
+				var instance = $.data(this, 'swatchbook');
+				if (!instance) {
+
+					$.data(this, 'swatchbook', new $.SwatchBook(options, this));
+
+				}
+
+			});
+
 		}
-		
+
 		return this;
-		
+
 	};
-	
-} )( window, jQuery );
+
+})(window, jQuery);
