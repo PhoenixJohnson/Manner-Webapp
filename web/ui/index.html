@@ -24,22 +24,15 @@
         }
     </style>
 
-
-    <!--<link rel="stylesheet" href="css/jquery-ui.min.css">-->
+    <!-- cross domain -->
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/ng-grid.css"/>
-    <!--<link rel="stylesheet" href="css/flat-ui.css">-->
-    <!--<link rel="stylesheet" href="css/bootstrap-theme.min.css">-->
-
     <link rel="stylesheet" type="text/css" href="css/app.css"/>
-
-    <!--<script src="js/vendor/modernizr/modernizr-2.6.2-respond-1.1.0.min.js"></script>-->
-
 
 </head>
 
-<body ng-app="TM">
+<body ng-app="TM" ng-show=true>
 
 <!--[if lt IE 7]>
 <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="//browsehappy.com/">upgrade
@@ -90,13 +83,17 @@
 <script src="js/directives/reportDirective.js"></script>
 <script src="js/directives/notifications/notyDirective.js"></script>
 
-
+ <!--plugins-->
 <script src="playground/playground.js"></script>
 <script src="js/Plugins/Clock.js"></script>
+<script src="js/Plugins/angularModalService.js"></script>
 
+
+<!-- end Plugins-->
 <script type="text/javascript" src="js/controllers/mainPageController.js"></script>
 <script src="js/controllers/pluginControllers.js"></script>
 <script src="js/controllers/reportController.js"></script>
+<script src="js/controllers/addItemController.js"></script>
 
 
 <script src="js/Reports/reportRouter.js"></script>

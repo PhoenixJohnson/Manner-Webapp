@@ -5,6 +5,7 @@ var TM = angular.module('TM',
 //        'TM.directives', // custom directives
 //        'TM.controllers',
 //        'TM.services',
+        'angularModalService',
         'TM.reports',
         'ngRoute',
         'ngResource',
@@ -32,7 +33,7 @@ var TM = angular.module('TM',
 var reports = angular.module('TM.reports',['ngRoute']);
 
 // bootstrap angular
-TM.config(['$routeProvider', '$locationProvider', '$httpProvider', function ($routeProvider, $locationProvider, $httpProvider) {
+TM.config(['$routeProvider', '$locationProvider', '$httpProvider', function ($routeProvider, $locationProvider) {
 
     // TODO use html5 *no hash) where possible
     // $locationProvider.html5Mode(true);
@@ -106,7 +107,7 @@ TM.run(function ($rootScope, $location, $http, $timeout, AuthService, RESTServic
 
     // async load constants
     $rootScope.constants = [];
-    $rootScope.restService.get('data/constants.json', function (data) {
+    $rootScope.restService.get('data/constants.jsonp', function (data) {
             $rootScope.constants = data[0];
         }
     );
