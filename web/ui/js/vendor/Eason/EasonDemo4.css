@@ -1,0 +1,18 @@
+#zt-slideshow {
+    background: url("background_1170.jpg") no-repeat scroll center center / cover white;
+}
+.flexslider {
+	background: #eeeaea;
+	background: rgba(238, 234, 234, 0.5);
+	/*position: relative; 
+	margin-left: 10px;
+	margin-right: 10px;
+	zoom: 1;*/
+}
+
+.flexslider .button {
+    background-color: #34343e;
+    color: white !important;
+    font-size: 10px;
+    padding: 1px 1px;
+}
