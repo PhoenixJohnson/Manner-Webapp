@@ -21,7 +21,8 @@ var TM = angular.module('TM',
 //        '$strap.directives', // angular strap
 //        'mannerControllers',
 //      ******Plugins******
-        'clockPlugin'
+        'clockPlugin',
+        'angularModalService'
 
     ]);
 
