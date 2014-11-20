@@ -8,7 +8,7 @@ TM.directive('leftMenu', [function () {
         	'<div class="page">'+
         		'<div class="content-frame">'+
         			'<div class="content container">'+
-        				'<div ng-view></div>'+
+        				'<div ng-view></div>'+ 
         				' <div ng-transclude></div>'+
         			'</div>'+
         		'</div>'+

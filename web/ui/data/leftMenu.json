@@ -1,5 +1,5 @@
 {
-"menuContent": [
+"menuContent": [ 
 { "text":"Team" , "clickFn":"testclick" ,"type":"a","iconClass":"icon team"},
 { "text":"Portfolio" , "clickFn":"testclick1" ,"type":"a","iconClass":"icon portfolio"},
 { "text":"About" , "clickFn":"testclick1" ,"type":"a","iconClass":"icon about"},

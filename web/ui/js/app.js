@@ -127,7 +127,7 @@ TM.run(function($rootScope, $location, $http, $timeout, AuthService, RESTService
     $rootScope.restService.get('data/leftMenu.json', function(data) {
         $rootScope.$broadcast('leftMenuContents', data);
     });
-
+ 
     // *****
     // Initialize authentication
     // *****
