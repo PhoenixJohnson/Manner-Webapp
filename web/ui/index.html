@@ -33,6 +33,7 @@
     <!--<link rel="stylesheet" href="css/bootstrap-theme.min.css">-->
 
     <link rel="stylesheet" type="text/css" href="css/app.css"/>
+    <link rel="stylesheet" type="text/css" href="css/LeftMenu.css"/>
 
     <!--<script src="js/vendor/modernizr/modernizr-2.6.2-respond-1.1.0.min.js"></script>-->
 
@@ -51,7 +52,12 @@
 <div id='topBlur' ng-include="'partials/navbar-top.html'"></div>
 
 <!-- ng routes hook -->
-<div ng-view></div>
+<!--  -->
+<div ng-controller="testLMCtrl">
+	<left-menu >
+		<!--div ng-view> </div-->
+	</left-menu>
+</div>
 
 <!-- footer -->
 
@@ -89,6 +95,7 @@
 <script src="js/directives/stopEventDirective.js"></script>
 <script src="js/directives/reportDirective.js"></script>
 <script src="js/directives/notifications/notyDirective.js"></script>
+<script src="js/directives/LeftMenuDirective.js"></script>
 
 
 <script src="playground/playground.js"></script>
@@ -100,6 +107,7 @@
 
 
 <script src="js/Reports/reportRouter.js"></script>
+
 
 </body>
 </html>

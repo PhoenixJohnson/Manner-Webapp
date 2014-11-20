@@ -1,0 +1,366 @@
+
+/*********************************
+  Page footer
+*/
+.page-footer {
+  clear: both;
+  width: 100%;
+  text-align: center;
+  padding-top: 160px;
+  margin-bottom: 25px;
+  color: #999;
+  font-size: 12px;
+}
+.page-footer hr {
+  border-top: 1px solid #eee;
+}
+.page-footer em {
+  color: #ccc;
+  margin: 0 0.6em;
+}
+.page-footer a {
+  color: #91cdec;
+}
+body {
+  margin: 0;
+  min-width: 100%;
+  height: 100%;
+  padding-left: 50px;
+}
+.ie8 body {
+  padding-left: 0;
+}
+.content-frame {
+  -ms-transform: translate(150px, 0);
+  -moz-transform: translate(150px, 0);
+  -webkit-transform: translate3d(150px, 0, 0);
+  transform: translate(150px, 0);
+  -ms-transition: -ms-transform 0.28s ease-in-out;
+  -moz-transition: -moz-transform 0.28s ease-in-out;
+  -webkit-transition: -webkit-transform 0.28s ease-in-out;
+  transition: transform 0.28s ease-in-out;
+}
+.nav-collapsed .content-frame {
+  -ms-transform: translate(0px, 0);
+  -moz-transform: translate(0px, 0);
+  -webkit-transform: translate3d(0px, 0, 0);
+  transform: translate(0px, 0);
+}
+.pin-frame {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  height: 0;
+}
+.pin-content {
+  margin: 0 auto;
+  width: 870px;
+  position: relative;
+  left: -25px;
+  -ms-transform: translate(150px, 0);
+  -moz-transform: translate(150px, 0);
+  -webkit-transform: translate3d(150px, 0, 0);
+  transform: translate(150px, 0);
+  -ms-transition: -ms-transform 0.28s ease-in-out;
+  -moz-transition: -moz-transform 0.28s ease-in-out;
+  -webkit-transition: -webkit-transform 0.28s ease-in-out;
+  transition: transform 0.28s ease-in-out;
+}
+.no-touch .nav-collapsed .pin-content {
+  -ms-transform: translate(0px, 0);
+  -moz-transform: translate(0px, 0);
+  -webkit-transform: translate3d(0px, 0, 0);
+  transform: translate(0px, 0);
+}
+html.side-nav-always-open {
+  padding-left: 200px;
+}
+html.side-nav-always-open body {
+  padding-left: 0;
+}
+html.side-nav-always-open .content-frame {
+  -moz-transition: none;
+  -webkit-transition: none;
+  -o-transition: none;
+  transition: none;
+  -webkit-transform: none;
+  -ms-transform: none;
+  -moz-transform: none;
+  -o-transform: none;
+  transform: none;
+}
+.side-nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 200px;
+  overflow: hidden;
+  cursor: default;
+  color: #c8c8c8;
+  background: #222;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -moz-transition: width ease-in-out 0.28s, background linear 0.1s;
+  -webkit-transition: width ease-in-out 0.28s, background linear 0.1s;
+  -o-transition: width ease-in-out 0.28s, background linear 0.1s;
+  transition: width ease-in-out 0.28s, background linear 0.1s;
+  -ms-transform: translate(0px, 0);
+  -moz-transform: translate(0px, 0);
+  -webkit-transform: translate3d(0px, 0, 0);
+  transform: translate(0px, 0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+.gv-logo {
+  height: 50px;
+}
+.gv-logo .logotype,
+.gv-logo .bug {
+  width: 150px;
+  height: 50px;
+}
+.gv-logo .logotype {
+  background-position: 0 -50px;
+  opacity: 1.0;
+  -moz-transition: opacity linear 0.28s;
+  -webkit-transition: opacity linear 0.28s;
+  -o-transition: opacity linear 0.28s;
+  transition: opacity linear 0.28s;
+}
+.gv-logo .bug {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.gv-logo span {
+  display: none;
+}
+.side-nav .gv-logo {
+  margin: 20px 0 30px 0;
+}
+.side-nav .gv-logo a {
+  display: block;
+  position: absolute;
+  right: 30px;
+  -moz-transition: right ease-in-out 0.28s;
+  -webkit-transition: right ease-in-out 0.28s;
+  -o-transition: right ease-in-out 0.28s;
+  transition: right ease-in-out 0.28s;
+}
+.nav-collapsed .side-nav .gv-logo a {
+  right: 6px;
+}
+.nav-collapsed .side-nav .gv-logo .logotype {
+  opacity: 0;
+}
+.ie8 .gv-logo .logotype,
+.ie8 .gv-logo .bug {
+}
+.ie8 .side-nav .gv-logo a {
+  right: auto;
+  left: 13px;
+}
+.side-nav ul {
+  width: 200px;
+}
+.side-nav li a {
+  display: block;
+  position: relative;
+  font-size: 16px;
+  font-weight: 300;
+  color: inherit;
+  color: #aaaaaa;
+  line-height: 44px;
+  padding-left: 50px;
+  border-top: 1px #2d2d2d solid;
+}
+.side-nav li a.selected {
+  color: #e3bc28;
+}
+.side-nav li:last-child a {
+  border-bottom: 1px #2d2d2d solid;
+}
+.side-nav h3 {
+  width: 200px;
+  margin: 45px 0 14px 15px;
+  font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  opacity: 1;
+  -moz-transition: opacity ease-in-out 0.28s;
+  -webkit-transition: opacity ease-in-out 0.28s;
+  -o-transition: opacity ease-in-out 0.28s;
+  transition: opacity ease-in-out 0.28s;
+}
+.side-nav .icon {
+  display: block;
+  position: absolute;
+  top: 1px;
+  left: 5px;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  opacity: 0.4;
+  background-image: url(../../nav-icons.svg);
+  
+  
+}
+.side-nav li a.selected .icon {
+  opacity: 1.0;
+}
+.side-nav .icon.team {
+  background-position: -7px 0px !important;
+}
+.side-nav .selected .icon.team {
+  background-position: -57px 0px !important;
+}
+.side-nav .icon.portfolio {
+  background-position: -7px -40px !important;
+}
+.side-nav .selected .icon.portfolio {
+  background-position: -57px -40px !important;
+}
+.side-nav .icon.about {
+  background-position: -7px -80px !important;
+}
+.side-nav .selected .icon.about {
+  background-position: -57px -80px !important;
+}
+.side-nav .icon.design {
+  background-position: -7px -160px !important;
+}
+.side-nav .selected .icon.design {
+  background-position: -57px -160px !important;
+}
+.side-nav .icon.recruiting {
+  background-position: -7px -200px !important;
+}
+.side-nav .selected .icon.recruiting {
+  background-position: -57px -200px !important;
+}
+.side-nav .icon.marketing {
+  background-position: -7px -240px !important;
+}
+.side-nav .selected .icon.marketing {
+  background-position: -57px -240px !important;
+}
+.side-nav .icon.engineering {
+  background-position: -7px -280px !important;
+}
+.side-nav .selected .icon.engineering {
+  background-position: -57px -280px !important;
+}
+.side-nav .icon.google-access {
+  background-position: -7px -320px !important;
+}
+.side-nav .selected .icon.google-access {
+  background-position: -57px -320px !important;
+}
+.side-nav .icon.library {
+  background-position: -7px -360px !important;
+}
+.side-nav .selected .icon.library {
+  background-position: -57px -360px !important;
+}
+.side-nav .icon.workshops {
+  background-position: -7px -400px !important;
+}
+.side-nav .selected .icon.workshops {
+  background-position: -57px -400px !important;
+}
+.side-nav .icon.product {
+  background-position: -7px -440px !important;
+}
+.side-nav .selected .icon.product {
+  background-position: -57px -440px !important;
+}
+.no-touch .side-nav li a:hover {
+  background: #111;
+}
+.ie8 .side-nav .icon {
+}
+.nav-collapsed .side-nav li a {
+  background: transparent;
+}
+.ie8 .side-nav li a {
+  line-height: 35px;
+  font-size: 14px;
+}
+.ie8 .side-nav .icon {
+  top: -5px;
+}
+.nav-collapsed .side-nav {
+  width: 50px;
+}
+.nav-collapsed .side-nav h3 {
+  opacity: 0;
+}
+.gv-logo.mobile {
+  display: none;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+.gv-logo.mobile .logotype {
+  top: 5px;
+  background-position: 0 -100px;
+}
+.top-nav {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding-top: 8px;
+  width: 100%;
+  height: 50px;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  color: #777;
+  font-size: 16px;
+  font-weight: 300;
+  z-index: 30;
+}
+.top-nav .left {
+  position: absolute;
+  left: 5px;
+  z-index: 5;
+}
+.top-nav .btn {
+  display: inline-block;
+  height: 32px;
+  line-height: 32px;
+  border: none;
+  color: inherit;
+  padding: 0 15px 0 35px;
+  
+  background-position: top left;
+  background-color: #fff;
+  border-right: 1px #e0e0e0 solid;
+}
+.top-nav .btn-icon {    
+  display: block;
+  position: absolute;
+  top: 7px;
+  left: 12px;
+  width: 20px;
+  height: 20px;
+  background-size: 75px 75px;
+}
+.top-nav .title {
+  margin: 0 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  line-height: 32px;
+}
+.h3{
+	color:#AAA;
+	font-size:20px;
+}
