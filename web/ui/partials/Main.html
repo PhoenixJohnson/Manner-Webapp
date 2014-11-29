@@ -1,140 +1,195 @@
-<div class="container-fluid" fade-in>
-    <div class="row btn" ng-controller="ClockCtrl">
+<div class="container-fluid" id="zt-slideshow" class="clearfix" fade-in>
+    <div class="row btn" style="color:black" ng-controller="ClockCtrl">
         {{time.now}}
     </div>
-    <div class="row" ng-controller="SampleController">
-        <a class="btn btn-default" href ng-click="show()">Show a Modal</a>
-    </div>
+    <!--<div class="row" ng-controller="SampleController">-->
+        <!--<a class="btn btn-default" href ng-click="show()">Show a Modal</a>-->
+    <!--</div>-->
     <!-- The actual modal template, just a bit o bootstrap -->
     <script type="text/ng-template" id="modal.html">
         <div class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <button type="button" class="close" ng-click="close('Cancel')" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <button type="button" class="close" ng-click="close('Cancel')" data-dismiss="modal"
+                                aria-hidden="true">&times;</button>
                         <h4 class="modal-title">Yes or No?</h4>
                     </div>
                     <div class="modal-body">
                         <p>It's your call...</p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" ng-click="close('No')" class="btn btn-default" data-dismiss="modal">No</button>
-                        <button type="button" ng-click="close('Yes')" class="btn btn-primary" data-dismiss="modal">Yes</button>
+                        <button type="button" ng-click="close('No')" class="btn btn-default" data-dismiss="modal">No
+                        </button>
+                        <button type="button" ng-click="close('Yes')" class="btn btn-primary" data-dismiss="modal">Yes
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </script>
-  <div class="row" style="width:80%;margin-left:auto;margin-right:auto">
-    <div class="col-md-11">
-    <div class="row">
-		    <div class="col-md-6">
-		      <div class="list-group">
-		        <h5 class="list-group-item active">Post Board</h5>
-		        <div class="list-group-item">
-		          <table class="table table-striped">
-		            <tbody>
-		              <tr data-toggle="modal" data-target="#taskCreate" ng-repeat="p in postBoard">
-		                <td><span class="bs-callout bs-callout-{{p.status}}"></span></td>
-		                <td>{{p.type}}</td>
-		                <td>{{p.desc}}</td>
-		                <td>{{p.date}}</td>
-		              </tr>
-		            </tbody>
-		          </table>
-		        </div>
-		      </div>
-		    </div>
-		    <div class="col-md-6">
-		      <div class="list-group">
-		        <h5 class="list-group-item active">Latest</h5>
-		        <div class="list-group-item">
-		          <table class="table table-striped">
-		            <tbody>
-		              <tr data-toggle="modal" data-target="#taskCreate{{l.id}}" ng-repeat="l in latest">
-		                <td><span class="glyphicon glyphicon-{{l.status}}"></span></td>
-		                <td>{{l.desc}}</td>
-		                <td>{{l.date}}</td>
-		              </tr>
-		            </tbody>
-		          </table>
-		        </div>
-		      </div>
-			</div>
-	    </div>
-    	<div class="row">
-		    <div class="col-md-6">
-		      <div class="list-group">
-		        <h5 class="list-group-item active">Post Board</h5>
-		        <div class="list-group-item">
-		          <table class="table table-striped">
-		            <tbody>
-		              <tr data-toggle="modal" data-target="#taskCreate" ng-repeat="p in items._embedded.items">
-		                <td><span class="bs-callout bs-callout-{{p.status}}"></span></td>
-		                <td>{{p.updatedBy}}</td>
-		                <td>{{p.version}}</td>
-		                <td>{{p.content}}</td>
-		              </tr>
-		            </tbody>
-		          </table>
-		        </div>
-		      </div>
-		    </div>
-		    <div class="col-md-6">
-		      <div class="list-group">
-		        <h5 class="list-group-item active">Latest</h5>
-		        <div class="list-group-item">
-		          <table class="table table-striped">
-		            <tbody>
-		              <tr data-toggle="modal" data-target="#taskCreate{{l.id}}" ng-repeat="l in users._embedded.users">
-		                <td><span class="glyphicon glyphicon-{{l.firstName}}"></span></td>
-		                <td>{{l.lastName}}</td>
-		                <td>{{l.email}}</td>
-		              </tr>
-		            </tbody>
-		          </table>
-		        </div>
-		      </div>
-			</div>
-	    </div>
-	    <ul class="row">
-	    	<li target="_List" class="col-md-3">
-		      <div class="list-group">
-		        <h5 class="list-group-item active">Personal List</h5>
-                <div class="list-group-item" style="height:150px"></div>
-		      </div>
+    <div class="row" style="width:80%;margin-left:auto;margin-right:auto">
+        <div class="col-md-11">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="list-group">
+                        <h5 class="list-group-item active">Post Board</h5>
 
-		    </li>
-		    <li target="_List" class="col-md-3">
-		      <div class="list-group">
-		        <h5 class="list-group-item active">Assign List</h5>
-                <div class="list-group-item" style="height:150px"></div>
-		      </div>
-		    </li>
-		    <li target="_List" class="col-md-3">
-		      <div class="list-group">
-		        <h5 class="list-group-item active">Action Pool</h5>
-                <div class="list-group-item" style="height:150px"></div>
-		      </div>
-		    </li>
-		    <li target="_List" class="col-md-3">
-		      <div class="list-group">
-		        <h5 class="list-group-item active">Group Action List</h5>
-                <div class="list-group-item" style="height:150px"></div>
-		      </div>
-		    </li>
-	    </ul>
-    </div>
-    <div class="col-md-1">
-    	<div class="btn-group btn-group-vertical">
-	        <button class="btn btn-default" id="sidetoggle" type="button">M</button>
-	        <button class="btn btn-primary" data-toggle="modal" data-target="#taskCreate">+</button>
-	        <button class="btn btn-warning" type="button">C</button>
-	        <button class="btn btn-danger" type="button">S</button>
+                        <div class="list-group-item">
+                            <table class="table table-striped">
+                                <tbody>
+                                <tr data-toggle="modal" data-target="#taskCreate" ng-repeat="p in postBoard">
+                                    <td><span class="bs-callout bs-callout-{{p.status}}"></span></td>
+                                    <td>{{p.type}}</td>
+                                    <td>{{p.desc}}</td>
+                                    <td>{{p.date}}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="list-group">
+                        <h5 class="list-group-item active">Latest</h5>
+
+                        <div class="list-group-item">
+                            <table class="table table-striped">
+                                <tbody>
+                                <tr data-toggle="modal" data-target="#taskCreate{{l.id}}" ng-repeat="l in latest">
+                                    <td><span class="glyphicon glyphicon-{{l.status}}"></span></td>
+                                    <td>{{l.desc}}</td>
+                                    <td>{{l.date}}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="row">-->
+                <!--<div class="col-md-6">-->
+                    <!--<div class="list-group">-->
+                        <!--<h5 class="list-group-item active">Post Board</h5>-->
+
+                        <!--<div class="list-group-item">-->
+                            <!--<table class="table table-striped">-->
+                                <!--<tbody>-->
+                                <!--<tr data-toggle="modal" data-target="#taskCreate"-->
+                                    <!--ng-repeat="p in items._embedded.items">-->
+                                    <!--<td><span class="bs-callout bs-callout-{{p.status}}"></span></td>-->
+                                    <!--<td>{{p.updatedBy}}</td>-->
+                                    <!--<td>{{p.version}}</td>-->
+                                    <!--<td>{{p.content}}</td>-->
+                                <!--</tr>-->
+                                <!--</tbody>-->
+                            <!--</table>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="col-md-6">-->
+                    <!--<div class="list-group">-->
+                        <!--<h5 class="list-group-item active">Latest</h5>-->
+
+                        <!--<div class="list-group-item">-->
+                            <!--<table class="table table-striped">-->
+                                <!--<tbody>-->
+                                <!--<tr data-toggle="modal" data-target="#taskCreate{{l.id}}"-->
+                                    <!--ng-repeat="l in users._embedded.users">-->
+                                    <!--<td><span class="glyphicon glyphicon-{{l.firstName}}"></span></td>-->
+                                    <!--<td>{{l.lastName}}</td>-->
+                                    <!--<td>{{l.email}}</td>-->
+                                <!--</tr>-->
+                                <!--</tbody>-->
+                            <!--</table>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <div ng-controller="DataRetrieve">
+                <flex-slider slide="s in slides" animation="slide" slideshow="false">
+                <li>
+                    <div class="slide-text">
+                        <h1 class="largetext">{{s}}</h1>
+                        <button class="button" ng-click="showDetails(s)">Show details >></button>
+                    </div>
+                    <div class="highcharts-container">
+                        <img src="resources/pictures/kitchen_adventurer_donut.jpg"/>
+                    </div>
+
+                </li>
+                </flex-slider>
+            </div>
+                <!--<div id="zt-slideshow-inner">-->
+                    <!--<div class="flexslider">-->
+                        <!--<ul class="slides">-->
+                            <!--<li>-->
+                                <!--<img src="resources/pictures/kitchen_adventurer_donut.jpg"/>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<img src="resources/pictures/kitchen_adventurer_donut.jpg"/>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<img src="resources/pictures/kitchen_adventurer_donut.jpg"/>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<img src="resources/pictures/kitchen_adventurer_donut.jpg"/>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<img src="resources/pictures/kitchen_adventurer_donut.jpg"/>-->
+                            <!--</li>-->
+                            <!--<li style="width: 1050px; float: left; display: block;">-->
+                            <!--<div class="flex-slides">-->
+                            <!--<div>-->
+                            <!--<div class="slide-text">-->
+                            <!--<h1>Personal List</h1>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--</li>-->
+                            <!--<li style="width: 1050px; float: left; display: block;">-->
+                            <!--<div class="flex-slides">-->
+                            <!--<div>-->
+                            <!--<div class="slide-text">-->
+                            <!--<h1>Assign List</h1>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--</li>-->
+                            <!--<li style="width: 1050px; float: left; display: block;">-->
+                            <!--<div class="flex-slides">-->
+                            <!--<div>-->
+                            <!--<div class="slide-text">-->
+                            <!--<h1>Action Pool</h1>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--</li>-->
+                            <!--<li style="width: 1050px; float: left; display: block;">-->
+                            <!--<div class="flex-slides">-->
+                            <!--<div>-->
+                            <!--<div class="slide-text">-->
+                            <!--<h1>Group Action List</h1>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <!--</li>-->
+                        <!--</ul>-->
+
+                    <!--</div>-->
+
+                <!--</div>-->
         </div>
-      </div>
+        <div class="col-md-1">
+            <div class="btn-group btn-group-vertical">
+                <button class="btn btn-default" id="sidetoggle" type="button">M</button>
+                <button class="btn btn-primary" data-toggle="modal" data-target="#taskCreate">+</button>
+                <button class="btn btn-warning" type="button">C</button>
+                <button class="btn btn-danger" type="button">S</button>
+            </div>
+        </div>
     </div>
-  </div>
+</div>
 </div>
 
 <!-- TODO - Side Nav -->
@@ -167,37 +222,40 @@
 <div noty ng-repeat="n in notifications"/>
 
 <!-- Modal - Task Create -->
-<div class="modal fade" id="taskCreate" tabindex="-1" role="dialog" aria-labelledby="taskCreateLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Create a new task</h4>
-      </div>
-      <div class="modal-body">
-        <form role="form">
-		  <div class="form-group">
-		    <label for="exampleInputEmail1">Email address</label>
-		    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-		  </div>
-		  <div class="form-group">
-		    <label for="exampleInputPassword1">Password</label>
-		    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-		  </div>
-		  <div class="form-group">
-		    <label for="exampleInputFile">File input</label>
-		    <input type="file" id="exampleInputFile">
-		    <p class="help-block">Example block-level help text here.</p>
-		  </div>
-		  <div class="checkbox">
-		    <label>
-		      <input type="checkbox"> Check me out
-		    </label>
-		  </div>
-		  <button type="submit" class="btn btn-default">Submit</button>
-		  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		</form>
-      </div>
+<div class="modal fade" id="taskCreate" tabindex="-1" role="dialog" aria-labelledby="taskCreateLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Create a new task</h4>
+            </div>
+            <div class="modal-body">
+                <form role="form">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputFile">File input</label>
+                        <input type="file" id="exampleInputFile">
+
+                        <p class="help-block">Example block-level help text here.</p>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"> Check me out
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </form>
+            </div>
+        </div>
     </div>
-  </div>
 </div>

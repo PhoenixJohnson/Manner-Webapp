@@ -4,7 +4,7 @@
 TM.controller('SampleController', function($scope, ModalService) {
 
     ModalService.showModal({
-        templateUrl: "partials/faq.html",
+//        templateUrl: "partials/faq.html",
         controller: "ModalController"
     }).then(function (modal) {
 

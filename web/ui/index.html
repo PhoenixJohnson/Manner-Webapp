@@ -15,7 +15,7 @@
     <title>Team Manner</title>
     <link REL="SHORTCUT ICON" HREF="favicon.png">
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+    <!--<meta name="viewport" content="width=device-width">-->
 
     <style>
         body {
@@ -27,12 +27,14 @@
     <!-- cross domain -->
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="css/ng-grid.css"/>
+    <link rel="stylesheet" type="text/css" href="css/flexslider.css"/>
     <link rel="stylesheet" type="text/css" href="css/app.css"/>
 
 </head>
 
-<body ng-app="TM" ng-show=true>
+<body ng-app="TM">
 
 <!--[if lt IE 7]>
 <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="//browsehappy.com/">upgrade
@@ -40,13 +42,6 @@
     improve your experience.</p>
 <![endif]-->
 
-<!-- bootstrap navbar -->
-<div id='topBlur' ng-include="'partials/navbar-top.html'"></div>
-
-<!-- ng routes hook -->
-<div ng-view></div>
-
-<!-- footer -->
 
 <script src="js/vendor/Jquery/jquery-1.11.1.min.js"></script>
 <script src="js/vendor/bootstrap/bootstrap.min.js"></script>
@@ -55,12 +50,11 @@
 <script src="js/vendor/angular/angular-route.min.js"></script>
 <script src="js/vendor/ng-grid/ng-grid.js"></script>
 <script src="js/vendor/D3/d3.min.js"></script>
+<script src="js/vendor/flexSlider/jquery.flexslider-min.js"></script>
+<script src="js/vendor/flexSlider/angular-flexslider.js"></script>
 <!--<script src="js/vendor/HighCharts/highcharts-all.js"></script>-->
 <script src="js/vendor/HighCharts/highcharts.js"></script>
 <script src="js/vendor/HighCharts/highcharts-3d.js"></script>
-
-<script src="js/vendor/bootstrap/ui-bootstrap-tpls-0.1.0-SNAPSHOT.js"></script>
-
 
 <!-- External tools inputting -->
 
@@ -83,8 +77,7 @@
 <script src="js/directives/reportDirective.js"></script>
 <script src="js/directives/notifications/notyDirective.js"></script>
 
- <!--plugins-->
-<script src="playground/playground.js"></script>
+<!--plugins-->
 <script src="js/Plugins/Clock.js"></script>
 <script src="js/Plugins/angularModalService.js"></script>
 
@@ -98,5 +91,28 @@
 
 <script src="js/Reports/reportRouter.js"></script>
 
+
+<!--<script type="text/javascript">-->
+    <!--$(window).load(function(){-->
+        <!--$('flex-slider').flexslider({-->
+            <!--animation: "slide"-->
+        <!--});-->
+    <!--});-->
+    <!--//    function InitializeImageSlider() {-->
+    <!--//        $('.flexslider').flexslider({-->
+    <!--//            animation: "slide",-->
+    <!--//            controlNav: true,-->
+    <!--//            directionNav: true,-->
+    <!--//            itemWidth: "100%",-->
+    <!--//            itemHeight: 400-->
+    <!--//        });-->
+    <!--//    }-->
+<!--</script>-->
+
+<div ng-include="'partials/navbar-top.html'"></div>
+<!-- ng routes hook -->
+<div ng-view></div>
+
+<div ng-include="'partials/navbar-bottom.html'"></div>
 </body>
 </html>

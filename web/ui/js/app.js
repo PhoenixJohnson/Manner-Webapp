@@ -6,6 +6,7 @@ var TM = angular.module('TM',
 //        'TM.controllers',
 //        'TM.services',
         'TM.reports',
+        'angular-flexslider',
         'ngRoute',
         'ngResource',
         'ngGrid',    // angular grid
@@ -53,12 +54,12 @@ TM.config(['$routeProvider', '$locationProvider', '$httpProvider', function ($ro
     $routeProvider.when('/about', {
         templateUrl: 'partials/about.html'
     });
-    $routeProvider.when('/faq', {
-        templateUrl: 'partials/faq.html'
-    });
+//    $routeProvider.when('/faq', {
+//        templateUrl: 'partials/faq.html'
+//    });
     $routeProvider.when('/demo', {
-        templateUrl: 'partials/Main.html',
-        controller:"DataRetrieve"
+        templateUrl: 'partials/Main.html'
+//        controller:"DataRetrieve"
     });
 //    $routeProvider.when('/tonyTest',{
 //    	templateUrl:"test/tonyTest.html",
@@ -84,10 +85,10 @@ TM.config(['$routeProvider', '$locationProvider', '$httpProvider', function ($ro
     // note that to minimize playground impact on app.js, we
     // are including just this simple route with a parameterized 
     // partial value (see playground.js and playground.html)
-    $routeProvider.when('/playground/:widgetName', {
-        templateUrl: 'playground/playground.html',
-        controller: 'PlaygroundCtrl'
-    });
+//    $routeProvider.when('/playground/:widgetName', {
+//        templateUrl: 'playground/playground.html',
+//        controller: 'PlaygroundCtrl'
+//    });
 
     // by default, redirect to site root
     $routeProvider.otherwise({
@@ -159,11 +160,7 @@ TM.run(function ($rootScope, $location, $http, $timeout, AuthService, RESTServic
     }, true);
 
     // TODO move this out to a more appropriate place
-    $rootScope.faq = [
-        {key: "What is Angular-Enterprise-Seed?", value: "A starting point for server-agnostic, REST based or static/mashup UI."},
-        {key: "What are the pre-requisites for running the seed?", value: "Just an HTTP server.  Add your own backend."},
-        {key: "How do I change styling (css)?", value: "Change Bootstrap LESS and rebuild with the build.sh script.  This will update the appropriate css/image/font files."}
-    ];
+
     
     // main.html test data
     $rootScope.postBoard = [
