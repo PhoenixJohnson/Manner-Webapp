@@ -68,10 +68,10 @@ tr:hover {
 
 /*Hack for modal popup*/
 .modal.fade .modal-dialog {
-    transform: translate3d(0px, -25%, 0px) rotate(-90deg);
+    /*transform: translate3d(0px, -25%, 0px) rotate(-90deg);*/
 }
 .modal.in .modal-dialog {
-    transform: translate3d(0px, 0px, 0px) rotate(0deg);
+    /*transform: translate3d(0px, 0px, 0px) rotate(0deg);*/
 }
 
 /*Side Nav*/

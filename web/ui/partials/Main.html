@@ -2,32 +2,7 @@
     <div class="row btn" style="color:black" ng-controller="ClockCtrl">
         {{time.now}}
     </div>
-    <!--<div class="row" ng-controller="SampleController">-->
-        <!--<a class="btn btn-default" href ng-click="show()">Show a Modal</a>-->
-    <!--</div>-->
-    <!-- The actual modal template, just a bit o bootstrap -->
-    <script type="text/ng-template" id="modal.html">
-        <div class="modal fade">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" ng-click="close('Cancel')" data-dismiss="modal"
-                                aria-hidden="true">&times;</button>
-                        <h4 class="modal-title">Yes or No?</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>It's your call...</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" ng-click="close('No')" class="btn btn-default" data-dismiss="modal">No
-                        </button>
-                        <button type="button" ng-click="close('Yes')" class="btn btn-primary" data-dismiss="modal">Yes
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </script>
+
     <div class="row" style="width:80%;margin-left:auto;margin-right:auto">
         <div class="col-md-11">
             <div class="row">
@@ -111,7 +86,7 @@
                 <li>
                     <div class="slide-text">
                         <h1 class="largetext">{{s}}</h1>
-                        <button class="button" ng-click="showDetails(s)">Show details >></button>
+                        <button class="btn btn-primary" ng-click="showDetails(s)">Show details <span class="badge">{{newComes}}</span></button>
                     </div>
                     <div class="highcharts-container">
                         <img src="resources/pictures/kitchen_adventurer_donut.jpg"/>
@@ -120,72 +95,14 @@
                 </li>
                 </flex-slider>
             </div>
-                <!--<div id="zt-slideshow-inner">-->
-                    <!--<div class="flexslider">-->
-                        <!--<ul class="slides">-->
-                            <!--<li>-->
-                                <!--<img src="resources/pictures/kitchen_adventurer_donut.jpg"/>-->
-                            <!--</li>-->
-                            <!--<li>-->
-                                <!--<img src="resources/pictures/kitchen_adventurer_donut.jpg"/>-->
-                            <!--</li>-->
-                            <!--<li>-->
-                                <!--<img src="resources/pictures/kitchen_adventurer_donut.jpg"/>-->
-                            <!--</li>-->
-                            <!--<li>-->
-                                <!--<img src="resources/pictures/kitchen_adventurer_donut.jpg"/>-->
-                            <!--</li>-->
-                            <!--<li>-->
-                                <!--<img src="resources/pictures/kitchen_adventurer_donut.jpg"/>-->
-                            <!--</li>-->
-                            <!--<li style="width: 1050px; float: left; display: block;">-->
-                            <!--<div class="flex-slides">-->
-                            <!--<div>-->
-                            <!--<div class="slide-text">-->
-                            <!--<h1>Personal List</h1>-->
-                            <!--</div>-->
-                            <!--</div>-->
-                            <!--</div>-->
-                            <!--</li>-->
-                            <!--<li style="width: 1050px; float: left; display: block;">-->
-                            <!--<div class="flex-slides">-->
-                            <!--<div>-->
-                            <!--<div class="slide-text">-->
-                            <!--<h1>Assign List</h1>-->
-                            <!--</div>-->
-                            <!--</div>-->
-                            <!--</div>-->
-                            <!--</li>-->
-                            <!--<li style="width: 1050px; float: left; display: block;">-->
-                            <!--<div class="flex-slides">-->
-                            <!--<div>-->
-                            <!--<div class="slide-text">-->
-                            <!--<h1>Action Pool</h1>-->
-                            <!--</div>-->
-                            <!--</div>-->
-                            <!--</div>-->
-                            <!--</li>-->
-                            <!--<li style="width: 1050px; float: left; display: block;">-->
-                            <!--<div class="flex-slides">-->
-                            <!--<div>-->
-                            <!--<div class="slide-text">-->
-                            <!--<h1>Group Action List</h1>-->
-                            <!--</div>-->
-                            <!--</div>-->
-                            <!--</div>-->
-                            <!--</li>-->
-                        <!--</ul>-->
 
-                    <!--</div>-->
-
-                <!--</div>-->
         </div>
         <div class="col-md-1">
             <div class="btn-group btn-group-vertical">
                 <button class="btn btn-default" id="sidetoggle" type="button">M</button>
                 <button class="btn btn-primary" data-toggle="modal" data-target="#taskCreate">+</button>
                 <button class="btn btn-warning" type="button">C</button>
-                <button class="btn btn-danger" type="button">S</button>
+                <button class="btn btn-danger" data-target="#myModal" data-toggle="modal" type="button">S</button>
             </div>
         </div>
     </div>
@@ -232,24 +149,38 @@
                 <h4 class="modal-title" id="myModalLabel">Create a new task</h4>
             </div>
             <div class="modal-body">
-                <form role="form">
+                <form role="form" ng-controller="DataRetrieve">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
                         <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <div class="dropdown">
+                            <div class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Select Task Type <span class="caret"></span></div>
+                            <ul class="dropdown-menu" role="menu">
+                                <li ng-click="selectType('IM Ticket')"><a>IM Ticket</a></li>
+                                <li ng-click="selectType('CR Ticket')"><a>CR Ticket</a></li>
+                                <li ng-click="selectType('Documentation')"><a>Documentation</a></li>
+                                <li class="divider"></li>
+                                <li ng-click="selectType('Escalation')"><a>Escalation</a></li>
+                            </ul>
+                        </div>
+                        <input disabled class="form-control" placeholder="Please select one first" ng-model="itemTypeName">
+
+                        <!--<label for="exampleInputPassword1">Password</label>-->
+                        <!--<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">-->
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputFile">File input</label>
-                        <input type="file" id="exampleInputFile">
-
-                        <p class="help-block">Example block-level help text here.</p>
+                        <label ng-show="!isTicket()">Description Input</label>
+                        <label ng-show="isTicket()">Ticket Number</label>
+                        <input type="text" class="form-control" ng-model="desNumber"/>
+                        <!--<label>File input</label>-->
+                        <!--<input type="file" id="exampleInputFile">-->
+                        <!--<p class="help-block">Example block-level help text here.</p>-->
                     </div>
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox"> Check me out
+                            <input type="checkbox" ng-model="completed"> Completed
                         </label>
                     </div>
                     <button type="submit" class="btn btn-default">Submit</button>
@@ -258,4 +189,22 @@
             </div>
         </div>
     </div>
+</div>
+
+
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" class="modal fade" share-action="" ng-model="test"
+     id="myModal" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="false" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 id="modalTitle" class="modal-title">Share your item</h4>
+            </div>
+            <div class="modal-body">
+                <button class="btn btn-info" ng-click="shareItem(testId,testSharePerson)">Share</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
 </div>

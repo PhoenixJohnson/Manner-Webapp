@@ -1,5 +1,12 @@
 TM.controller('DataRetrieve',['$scope','Items','Users',function($scope, Items,Users){
-	$scope.items =Items.query();
+
+    $scope.itemTypeName="";
+    $scope.newComes=99;
+    $scope.completed=true;
+    $scope.desNumber="";
+
+
+    $scope.items =Items.query();
 	$scope.users=Users.query();
     $scope.slides = [
         "Personal Action List",
@@ -10,6 +17,17 @@ TM.controller('DataRetrieve',['$scope','Items','Users',function($scope, Items,Us
 
     $scope.showDetails = function(listName){
       alert(listName);
+    };
+
+    $scope.selectType = function(typeName){
+       $scope.itemTypeName=typeName;
+    };
+
+    $scope.isTicket = function(){
+      if($scope.itemTypeName.indexOf("Ticket")>0)
+        return true;
+      else
+        return false;
     };
 
 }]);

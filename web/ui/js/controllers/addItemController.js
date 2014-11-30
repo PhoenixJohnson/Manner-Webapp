@@ -22,3 +22,14 @@ TM.controller('ModalController', function($scope, close) {
     // when you need to close the modal, call close
     close("Success!");
 });
+
+TM.controller('addActionItemController',function($scope){
+
+    $scope.testId="IM19982363";
+    $scope.testSharePerson="Phoenix";
+
+    $scope.shareItem = function(itemId,shareWith){
+        alert("You are sharing item:"+itemId +" with your team member:"+shareWith+"!");
+    }
+
+})

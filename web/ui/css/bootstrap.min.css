@@ -5198,8 +5198,8 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
     display: block;
     padding: 10px 15px;
     margin-bottom: -1px;
-    background-color: #ffffff;
-    border: 1px solid #dddddd
+    background-color: rgba(255, 255, 255, 0);
+    /*border: 1px solid #dddddd*/
 }
 
 .list-group-item:first-child {
@@ -5250,9 +5250,12 @@ a.list-group-item:hover, a.list-group-item:focus {
 
 .list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
     z-index: 2;
-    color: #ffffff;
-    background-color: #158cba;
-    border-color: #158cba
+	font-size:16px;
+	text-shadow:1px 1px 1px rgba(0,0,0,.8);
+	bold:true;
+    color: #000000;
+    background-color: rgba(21, 140, 186, 0);
+    border-color: #000000
 }
 
 .list-group-item.active .list-group-item-heading, .list-group-item.active:hover .list-group-item-heading, .list-group-item.active:focus .list-group-item-heading, .list-group-item.active .list-group-item-heading > small, .list-group-item.active:hover .list-group-item-heading > small, .list-group-item.active:focus .list-group-item-heading > small, .list-group-item.active .list-group-item-heading > .small, .list-group-item.active:hover .list-group-item-heading > .small, .list-group-item.active:focus .list-group-item-heading > .small {
@@ -5836,6 +5839,7 @@ button.close {
 
 .modal-title {
     margin: 0;
+	color: #009fdc;
     line-height: 1.42857143
 }
 
