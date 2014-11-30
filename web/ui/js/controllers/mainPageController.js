@@ -14,6 +14,14 @@ TM.controller('DataRetrieve',['$scope','Items','Users',function($scope, Items,Us
         "Action Pool",
         "Expire Action List"
     ];
+    $scope.itemTypeNames =[
+      "Pro Ticket",
+      "ALM Ticket",
+      "Documentation",
+      "US Design",
+      "Building",
+      "Escalation Issue"
+    ];
 
     $scope.showDetails = function(listName){
       alert(listName);

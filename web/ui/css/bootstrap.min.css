@@ -4112,7 +4112,8 @@ textarea.input-group-sm > .form-control, textarea.input-group-sm > .input-group-
 
 @media (max-width: 480px) and (orientation: landscape) {
     .navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
-        max-height: 200px
+	    background-color: rgba(255, 255, 255, 0);
+	    max-height: 200px
     }
 }
 
@@ -4516,7 +4517,7 @@ textarea.input-group-sm > .form-control, textarea.input-group-sm > .input-group-
 }
 
 .navbar-inverse .navbar-brand {
-    color: #999999
+    color: #000000
 }
 
 .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
@@ -4529,7 +4530,7 @@ textarea.input-group-sm > .form-control, textarea.input-group-sm > .input-group-
 }
 
 .navbar-inverse .navbar-nav > li > a {
-    color: #999999
+    color: #000000
 }
 
 .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
@@ -5189,6 +5190,7 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
 }
 
 .list-group {
+	background:rgba(238, 234, 234, 0.7);
     margin-bottom: 20px;
     padding-left: 0
 }
@@ -5253,8 +5255,8 @@ a.list-group-item:hover, a.list-group-item:focus {
 	font-size:16px;
 	text-shadow:1px 1px 1px rgba(0,0,0,.8);
 	bold:true;
-    color: #000000;
-    background-color: rgba(21, 140, 186, 0);
+    color: #f0eff7;
+    background-color: rgba(24, 182, 219, 1);
     border-color: #000000
 }
 
@@ -6351,7 +6353,7 @@ button.close {
     }
 }
 
-.clearfix:before, .clearfix:after, .dl-horizontal dd:before, .dl-horizontal dd:after, .container:before, .container:after, .container-fluid:before, .container-fluid:after, .row:before, .row:after, .form-horizontal .form-group:before, .form-horizontal .form-group:after, .btn-toolbar:before, .btn-toolbar:after, .btn-group-vertical > .btn-group:before, .btn-group-vertical > .btn-group:after, .nav:before, .nav:after, .navbar:before, .navbar:after, .navbar-header:before, .navbar-header:after, .navbar-collapse:before, .navbar-collapse:after, .pager:before, .pager:after, .panel-body:before, .panel-body:after, .modal-footer:before, .modal-footer:after {
+.clearfix:before, .clearfix:after, .dl-horizontal dd:before, .dl-horizontal dd:after, .container:before, .container:after,  .container-fluid:before, .container-fluid:after, .row:before, .row:after, .form-horizontal .form-group:before, .form-horizontal .form-group:after, .btn-toolbar:before, .btn-toolbar:after, .btn-group-vertical > .btn-group:before, .btn-group-vertical > .btn-group:after, .nav:before, .nav:after, .navbar:before, .navbar:after, .navbar-header:before, .navbar-header:after, .navbar-collapse:before, .navbar-collapse:after, .pager:before, .pager:after, .panel-body:before, .panel-body:after, .modal-footer:before, .modal-footer:after {
     content: " ";
     display: table
 }
@@ -6652,7 +6654,7 @@ button.close {
     border-width: 0 1px 4px 1px;
     font-size: 12px;
     font-weight: bold;
-    text-transform: uppercase
+    text-transform: uppercase;
 }
 
 .btn:hover {

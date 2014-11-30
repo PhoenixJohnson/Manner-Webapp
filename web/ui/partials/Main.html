@@ -1,8 +1,8 @@
-<div class="container-fluid" id="zt-slideshow" class="clearfix" fade-in>
-    <div class="row btn" style="color:black" ng-controller="ClockCtrl">
+<div class="container-fluid" id="zt-slideshow" fade-in>
+    <div class="row btn" style="color:white;float:right;" ng-controller="ClockCtrl">
         {{time.now}}
     </div>
-
+    <div class="row"></div>
     <div class="row" style="width:80%;margin-left:auto;margin-right:auto">
         <div class="col-md-11">
             <div class="row">
@@ -98,7 +98,7 @@
 
         </div>
         <div class="col-md-1">
-            <div class="btn-group btn-group-vertical">
+            <div class="btn-group btn-group-vertical" style="margin-top:20px">
                 <button class="btn btn-default" id="sidetoggle" type="button">M</button>
                 <button class="btn btn-primary" data-toggle="modal" data-target="#taskCreate">+</button>
                 <button class="btn btn-warning" type="button">C</button>
@@ -136,7 +136,7 @@
 </div>-->
 
 <!-- Notifications -->
-<div noty ng-repeat="n in notifications"/>
+<!--<div noty ng-repeat="n in notifications"/>-->
 
 <!-- Modal - Task Create -->
 <div class="modal fade" id="taskCreate" tabindex="-1" role="dialog" aria-labelledby="taskCreateLabel"
@@ -158,11 +158,9 @@
                         <div class="dropdown">
                             <div class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Select Task Type <span class="caret"></span></div>
                             <ul class="dropdown-menu" role="menu">
-                                <li ng-click="selectType('IM Ticket')"><a>IM Ticket</a></li>
-                                <li ng-click="selectType('CR Ticket')"><a>CR Ticket</a></li>
-                                <li ng-click="selectType('Documentation')"><a>Documentation</a></li>
-                                <li class="divider"></li>
-                                <li ng-click="selectType('Escalation')"><a>Escalation</a></li>
+                                <div ng-repeat="name in itemTypeNames">
+                                    <li ng-click="selectType(name)"><a>{{name}}</a></li>
+                                </div>
                             </ul>
                         </div>
                         <input disabled class="form-control" placeholder="Please select one first" ng-model="itemTypeName">

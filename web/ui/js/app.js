@@ -156,7 +156,7 @@ TM.run(function ($rootScope, $location, $http, $timeout, AuthService, RESTServic
         {status: "warning", type: "A", desc: "Consectetur adipiscing elit", date:"2014/09/12"},
         {status: "info", type: "R", desc: "Sed do eiusmod tempor incididunt ut", date:"2014/09/13"},
         {status: "danger", type: "T", desc: "Sed ut perspiciatis unde omnis", date:"2014/09/14"},
-        {status: "warning", type: "C", desc: "Velit esse quam nihil molestiae consequatur", date:"2014/09/15"}
+        {status: "warning", type: "C", desc: "Velit esse quam nihil", date:"2014/09/15"}
 	];
     $rootScope.latest = [
         {id: "1", status: "star", desc: "Lorem ipsum dolor sit amet", date:"2014/09/11"},
