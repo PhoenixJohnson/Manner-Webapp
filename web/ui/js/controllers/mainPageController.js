@@ -4,6 +4,7 @@ TM.controller('DataRetrieve',['$scope','Items','Users',function($scope, Items,Us
     $scope.newComes=99;
     $scope.completed=true;
     $scope.desNumber="";
+    $scope.targetCompleteDate="";
 
 
     $scope.items =Items.query();
@@ -37,6 +38,13 @@ TM.controller('DataRetrieve',['$scope','Items','Users',function($scope, Items,Us
       else
         return false;
     };
+
+    $scope.setTargetDate = function(completed){
+        if(completed)
+            $scope.targetCompleteDate = Date.now;
+        else
+            $scope.targetCompleteDate = "";
+    }
 
 }]);
 //mannerControllers.controller('tonyTestCtrl',['$scope','Items',function($scope, Items){
