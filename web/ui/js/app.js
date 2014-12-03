@@ -10,6 +10,8 @@ var TM = angular.module('TM',
         'ngRoute',
         'ngResource',
         'ngGrid',    // angular grid
+        //Plugins
+        'ui.calendar',
         'clockPlugin',
         'angularModalService'
 
@@ -49,10 +51,10 @@ TM.config(['$routeProvider', '$locationProvider', '$httpProvider', function ($ro
         templateUrl: 'partials/Main.html'
 //        controller:"DataRetrieve"
     });
-//    $routeProvider.when('/tonyTest',{
-//    	templateUrl:"test/tonyTest.html",
-//    	controller:"tonyTestCtrl"
-//    });
+    $routeProvider.when('/calendar',{
+    	templateUrl:"partials/calendar.html",
+        controller:'uiCalendarCtrl'
+    });
     $routeProvider.when('/httpdemo',{
     	templateUrl: 'partials/httpdemo.html'
     });

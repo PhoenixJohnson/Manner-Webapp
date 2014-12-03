@@ -1,8 +1,9 @@
 TM.controller('DataRetrieve',['$scope','Items','Users',function($scope, Items,Users){
 
+    //Initialize the add item popup window.
     $scope.itemTypeName="";
     $scope.newComes=99;
-    $scope.completed=true;
+    $scope.completed=false;
     $scope.desNumber="";
     $scope.targetCompleteDate="";
 
@@ -44,6 +45,10 @@ TM.controller('DataRetrieve',['$scope','Items','Users',function($scope, Items,Us
             $scope.targetCompleteDate = Date.now;
         else
             $scope.targetCompleteDate = "";
+    }
+
+    $scope.abc =function(x){
+
     }
 
 }]);

@@ -136,7 +136,7 @@ html.side-nav-open body {
 /*
 * ===== Slideshow
 */
-#zt-slideshow {
+.zt-slideshow {
     background: url(../resources/pictures/007.jpg) no-repeat center center white;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -253,6 +253,24 @@ html.side-nav-open body {
 }
 
 .slider { margin: 50px 0 10px!important;}
+
+.TMWindow {
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.calendarHeader {
+
+    font-size: 60px;
+    line-height: 62px;
+    font-weight: 300;
+    margin: 10px 0;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.8);
+
+}
 
 /*#top-nav{*/
     /*background-color: #60d1ff;*/
