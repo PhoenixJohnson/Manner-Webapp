@@ -260,6 +260,14 @@ html.side-nav-open body {
     margin-right:auto;
 }
 
+.TMSelectItem{
+
+    text-align: center;
+}
+.TMSelectItem:hover{
+    background-color: rgba(27, 29, 32, 0.100);
+}
+
 .calendarHeader {
 
     font-size: 60px;
