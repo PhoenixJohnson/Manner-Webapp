@@ -8,6 +8,7 @@ TM.controller('DataRetrieve',['$scope','Items','Users',function($scope, Items,Us
     $scope.targetCompleteDate="";
 
 
+
     $scope.items =Items.query();
 	$scope.users=Users.query();
     $scope.slides = [
@@ -47,7 +48,11 @@ TM.controller('DataRetrieve',['$scope','Items','Users',function($scope, Items,Us
             $scope.targetCompleteDate = "";
     }
 
-    $scope.abc =function(x){
+    $scope.updateT =function(item){
+
+        $scope.completed=true;
+        $scope.desNumber=item.title;
+        $scope.targetCompleteDate=item.dueDate;
 
     }
 

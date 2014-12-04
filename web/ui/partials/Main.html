@@ -13,11 +13,12 @@
                         <div class="list-group-item">
                             <table class="table table-striped">
                                 <tbody>
-                                <tr data-toggle="modal" data-target="#taskCreate" ng-repeat="p in postBoard">
-                                    <td><span class="bs-callout bs-callout-{{p.status}}"></span></td>
-                                    <td>{{p.type}}</td>
-                                    <td>{{p.desc}}</td>
-                                    <td>{{p.date}}</td>
+                                <tr data-toggle="modal" data-target="#updateTask"
+                                    ng-repeat="item in items._embedded.items" ng-click="updateT(item)">
+                                    <td><span class="bs-callout bs-callout-{{item.status}}"></span></td>
+                                    <td>{{item.priority}}</td>
+                                    <td>{{item.title}}</td>
+                                    <td>{{item.dueDate | date:"MM/dd/yyyy"}}</td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -43,59 +44,60 @@
                 </div>
             </div>
             <!--<div class="row">-->
-                <!--<div class="col-md-6">-->
-                    <!--<div class="list-group">-->
-                        <!--<h5 class="list-group-item active">Post Board</h5>-->
+            <!--<div class="col-md-6">-->
+            <!--<div class="list-group">-->
+            <!--<h5 class="list-group-item active">Post Board</h5>-->
 
-                        <!--<div class="list-group-item">-->
-                            <!--<table class="table table-striped">-->
-                                <!--<tbody>-->
-                                <!--<tr data-toggle="modal" data-target="#taskCreate"-->
-                                    <!--ng-repeat="p in items._embedded.items">-->
-                                    <!--<td><span class="bs-callout bs-callout-{{p.status}}"></span></td>-->
-                                    <!--<td>{{p.updatedBy}}</td>-->
-                                    <!--<td>{{p.version}}</td>-->
-                                    <!--<td>{{p.content}}</td>-->
-                                <!--</tr>-->
-                                <!--</tbody>-->
-                            <!--</table>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="col-md-6">-->
-                    <!--<div class="list-group">-->
-                        <!--<h5 class="list-group-item active">Latest</h5>-->
+            <!--<div class="list-group-item">-->
+            <!--<table class="table table-striped">-->
+            <!--<tbody>-->
+            <!--<tr data-toggle="modal" data-target="#taskCreate"-->
+            <!--ng-repeat="p in items._embedded.items">-->
+            <!--<td><span class="bs-callout bs-callout-{{p.status}}"></span></td>-->
+            <!--<td>{{p.updatedBy}}</td>-->
+            <!--<td>{{p.version}}</td>-->
+            <!--<td>{{p.content}}</td>-->
+            <!--</tr>-->
+            <!--</tbody>-->
+            <!--</table>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="col-md-6">-->
+            <!--<div class="list-group">-->
+            <!--<h5 class="list-group-item active">Latest</h5>-->
 
-                        <!--<div class="list-group-item">-->
-                            <!--<table class="table table-striped">-->
-                                <!--<tbody>-->
-                                <!--<tr data-toggle="modal" data-target="#taskCreate{{l.id}}"-->
-                                    <!--ng-repeat="l in users._embedded.users">-->
-                                    <!--<td><span class="glyphicon glyphicon-{{l.firstName}}"></span></td>-->
-                                    <!--<td>{{l.lastName}}</td>-->
-                                    <!--<td>{{l.email}}</td>-->
-                                <!--</tr>-->
-                                <!--</tbody>-->
-                            <!--</table>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
+            <!--<div class="list-group-item">-->
+            <!--<table class="table table-striped">-->
+            <!--<tbody>-->
+            <!--<tr data-toggle="modal" data-target="#taskCreate{{l.id}}"-->
+            <!--ng-repeat="l in users._embedded.users">-->
+            <!--<td><span class="glyphicon glyphicon-{{l.firstName}}"></span></td>-->
+            <!--<td>{{l.lastName}}</td>-->
+            <!--<td>{{l.email}}</td>-->
+            <!--</tr>-->
+            <!--</tbody>-->
+            <!--</table>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
             <!--</div>-->
 
 
             <!-- Slides to show -->
             <div ng-controller="DataRetrieve">
                 <flex-slider slide="s in slides" animation="slide" slideshow="false">
-                <li>
-                    <div class="slide-text">
-                        <h1 class="largetext">{{s}}</h1>
-                        <button class="btn btn-primary" ng-click="showDetails(s)">Show details <span class="badge">{{newComes}}</span></button>
-                    </div>
-                    <div class="highcharts-container-slider">
-                        <img src="resources/pictures/kitchen_adventurer_donut.jpg"/>
-                    </div>
+                    <li>
+                        <div class="slide-text">
+                            <h1 class="largetext">{{s}}</h1>
+                            <button class="btn btn-primary" ng-click="showDetails(s)">Show details <span class="badge">{{newComes}}</span>
+                            </button>
+                        </div>
+                        <div class="highcharts-container-slider">
+                            <img src="resources/pictures/kitchen_adventurer_donut.jpg"/>
+                        </div>
 
-                </li>
+                    </li>
                 </flex-slider>
             </div>
 
@@ -140,6 +142,63 @@
 
 <!-- Notifications -->
 <!--<div noty ng-repeat="n in notifications"/>-->
+<!-- update Item -->
+<div class="modal fade" id="updateTask" tabindex="-1" role="dialog" aria-labelledby="taskCreateLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
+                <h4 class="modal-title">Update your Task</h4>
+            </div>
+            <div class="modal-body">
+                <form role="form" ng-controller="DataRetrieve">
+                    <div class="form-group">
+                        <label>Email address</label>
+                        <input type="email" class="form-control" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                        <div class="dropdown">
+                            <div class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                Select Task Type <span class="caret"></span></div>
+                            <ul class="dropdown-menu" role="menu">
+                                <div ng-repeat="name in itemTypeNames">
+                                    <li ng-click="selectType(name)" class="TMSelectItem"><a>{{name}}</a></li>
+                                </div>
+                            </ul>
+                        </div>
+                        <input disabled class="form-control" placeholder="Please select one first"
+                               ng-model="itemTypeName">
+
+                        <!--<label for="exampleInputPassword1">Password</label>-->
+                        <!--<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">-->
+                    </div>
+                    <div class="form-group">
+                        <label ng-show="!isTicket()">Description Input</label>
+                        <label ng-show="isTicket()">Ticket Number</label>
+                        <input type="text" class="form-control" ng-model="desNumber" required/>
+                        <!--<label>File input</label>-->
+                        <!--<input type="file" id="exampleInputFile">-->
+                        <!--<p class="help-block">Example block-level help text here.</p>-->
+                    </div>
+                    <div class="form-group">
+                        <label ng-show="!completed">Target Complete Date</label>
+                        <input ng-show="!completed" type="date" class="form-control" ng-model="targetCompleteDate"/>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" ng-model="completed"> Completed
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <!-- Modal - Task Create -->
 <div class="modal fade" id="taskCreate" tabindex="-1" role="dialog" aria-labelledby="taskCreateLabel"
@@ -159,14 +218,16 @@
                     </div>
                     <div class="form-group">
                         <div class="dropdown">
-                            <div class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Select Task Type <span class="caret"></span></div>
+                            <div class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                Select Task Type <span class="caret"></span></div>
                             <ul class="dropdown-menu" role="menu">
                                 <div ng-repeat="name in itemTypeNames">
                                     <li ng-click="selectType(name)" class="TMSelectItem"><a>{{name}}</a></li>
                                 </div>
                             </ul>
                         </div>
-                        <input disabled class="form-control" placeholder="Please select one first" ng-model="itemTypeName">
+                        <input disabled class="form-control" placeholder="Please select one first"
+                               ng-model="itemTypeName">
 
                         <!--<label for="exampleInputPassword1">Password</label>-->
                         <!--<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">-->
@@ -188,7 +249,7 @@
                             <input type="checkbox" ng-model="completed"> Completed
                         </label>
                     </div>
-                    <button type="submit" class="btn btn-default" ng-click="abc(x)">Submit</button>
+                    <button type="submit" class="btn btn-default">Submit</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </form>
             </div>
@@ -197,7 +258,8 @@
 </div>
 
 
-<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" class="modal fade" share-action="" ng-model="test"
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" class="modal fade" share-action=""
+     ng-model="test"
      id="myModal" style="display: none;">
     <div class="modal-dialog">
         <div class="modal-content">

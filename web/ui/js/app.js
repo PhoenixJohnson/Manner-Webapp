@@ -48,8 +48,8 @@ TM.config(['$routeProvider', '$locationProvider', '$httpProvider', function ($ro
 //        templateUrl: 'partials/faq.html'
 //    });
     $routeProvider.when('/home', {
-        templateUrl: 'partials/Main.html'
-//        controller:"DataRetrieve"
+        templateUrl: 'partials/Main.html',
+        controller:"DataRetrieve"
     });
     $routeProvider.when('/calendar',{
     	templateUrl:"partials/calendar.html",

@@ -3,7 +3,7 @@
  */
 TM.constant('TM.config',
     {
-            RESTAPIBASEURL: 'http://C0048360.itcs.hp.com:8080/manner-ci/api/'
+            RESTAPIBASEURL: 'http://localhost:8080/api/'
 //            RESTAPIBASEURL: 'http://16.187.38.170:8002/manner-ci/api/'
     }
 );

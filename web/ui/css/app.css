@@ -192,13 +192,13 @@ html.side-nav-open body {
 
 .TMHeader {
 
-    font-size: 60px;
-    line-height: 62px;
+    font-size: 35px;
+    line-height: 35px;
     font-weight: 300;
     margin: 10px 0;
     text-align: center;
     color: white;
-    text-shadow: 1px 1px 1px rgba(0,0,0,.8);
+    text-shadow: 3px 3px 3px rgba(0,0,0,.8);
 
 }
 

@@ -156,6 +156,7 @@ html[xmlns] .slides {display: block;}
         width: 100%;
         float: none;
         margin: auto;
+	    box-shadow: 10px 10px 10px black ;
     }
     .slide-text {
         width: 100%;
