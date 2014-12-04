@@ -81,7 +81,32 @@ TM.factory('Users', [ '$resource','TM.config',function($resource,config) {
         'update' : {}
     });
 } ]);
-
+//User
+mannerServices.factory('User', [ '$resource', function($resource) {
+	return $resource('http://localhost:8080/manner-ci/api/users', {}, {
+		'query' : {
+			url:'http://localhost:8080/manner-ci/api/users/:userId',
+			method : 'GET',
+			cache : false
+		},
+		'save' : {
+			url:'http://localhost:8080/manner-ci/api/users/:userId',
+			method:'POST'
+		},
+		'delete':{
+			url:'http://localhost:8080/manner-ci/api/users/:userId',
+			method:'DELETE',
+			cache:false
+		},
+		'update':{
+			url:'http://localhost:8080/manner-ci/api/users/:userId',
+			method:'PUT',
+			params:{
+			},
+			cache:false
+		},
+	});
+} ]);
 
 
 
