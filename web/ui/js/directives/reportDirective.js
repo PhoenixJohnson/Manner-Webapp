@@ -17,7 +17,7 @@ TM.directive('reportPanel', function () {
     return {
         restrict:'E',
         controller:'reportCtrl',
-        templateUrl:'reports/3dchart.html'
+//        templateUrl:'reports/.html'
 
     };
 });

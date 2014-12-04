@@ -130,13 +130,14 @@ html[xmlns] .slides {display: block;}
     line-height: 26px;
 }
 /* Moved from pie chart slide */
-.highcharts-container {
+.highcharts-container-slider {
     width: 55%;
     float: left;
     overflow: hidden;
     max-width: 566px;
     max-height:300px;
-    margin-top: 30px;
+    margin-top: 15px;
+	margin-bottom: 15px;
     margin-right:10px;
 }
 .slide-text {

@@ -1,14 +1,38 @@
-TM.controller('reportCtrl',['$scope',function($scope){
+TM.controller('reportCtrl', ['$scope', function ($scope) {
 
-    $scope.reportName = '3dchart';
+    $scope.reportNames = [
+        'Team Member Workload',
+        'Pro ticket report',
+        'ALM ticket report'
 
-    var reportList = {"report1":"3dchart","report2":"piechart" }
+    ];
+    $scope.currentReportName = "demoReport";
 
-    this.changeReport = function(){
-        $scope.reportName = "report2";
+    $scope.getUrl = function () {
+        return 'reports/' + $scope.currentReportName + '.html';
+    };
+
+    $scope.changeReport = function (rpName) {
+        switch (rpName) {
+            case ("Team member Workload"):
+
+                $scope.currentReportName = "demoReport";
+                break;
+
+            case ("Pro ticket report"):
+
+                $scope.currentReportName = "demoReport2";
+                break;
+
+            case ("ALM ticket report"):
+
+                $scope.currentReportName = "demoReport3";
+                break;
+
+            default :
+                $scope.currentReportName = "demoReport";
+
+        }
     }
 
 }]);
-//mannerControllers.controller('tonyTestCtrl',['$scope','Items',function($scope, Items){
-//	$scope.items=Items.query();
-//}]);

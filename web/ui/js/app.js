@@ -47,7 +47,7 @@ TM.config(['$routeProvider', '$locationProvider', '$httpProvider', function ($ro
 //    $routeProvider.when('/faq', {
 //        templateUrl: 'partials/faq.html'
 //    });
-    $routeProvider.when('/demo', {
+    $routeProvider.when('/home', {
         templateUrl: 'partials/Main.html'
 //        controller:"DataRetrieve"
     });
@@ -55,21 +55,9 @@ TM.config(['$routeProvider', '$locationProvider', '$httpProvider', function ($ro
     	templateUrl:"partials/calendar.html",
         controller:'uiCalendarCtrl'
     });
-    $routeProvider.when('/httpdemo',{
-    	templateUrl: 'partials/httpdemo.html'
-    });
-    $routeProvider.when('/demoEason', {
-            templateUrl: 'partials/demoEason.html'
-        });
-        $routeProvider.when('/demoEason2', {
-            templateUrl: 'partials/demoEason2.html'
-        });
-        $routeProvider.when('/demoEason3', {
-            templateUrl: 'partials/demoEason3.html'
-        });
 
     $routeProvider.when('/Reports',{
-        templateUrl: 'reports/Main.html'
+        templateUrl: 'reports/reportMain.html'
     });
 
     // note that to minimize playground impact on app.js, we

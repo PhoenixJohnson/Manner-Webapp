@@ -132,12 +132,25 @@ html.side-nav-open body {
   padding-left: 0;
 }
 
+.list-group-item-x {
+	position: relative;
+	display: block;
+	padding: 5px 5px;
+	margin-bottom: -1px;
+	background-color: rgba(255, 255, 255, 0);
+	/*border: 1px solid #dddddd*/
+}
+.list-group-item-x:hover {
 
+	background-color: rgba(0, 159, 220, 0.45);
+	cursor:pointer;
+}
 /*
 * ===== Slideshow
 */
 .zt-slideshow {
     background: url(../resources/pictures/007.jpg) no-repeat center center white;
+	min-height: inherit;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -160,97 +173,6 @@ html.side-nav-open body {
     text-transform: uppercase;
     text-align: center;
 }
-/*
-* ===== HS Clients
-*/
-#hs-clients {
-    background-color: #ffffff;
-    text-align: center;
-}
-/*
-* ===== ZT Mainframe
-*/
-#zt-mainframe {
-    display: none;
-}
-/*
-* ===== Userwrap 6
-*/
-#zt-userwrap6 {
-    background-color: #eeeaea;
-}
-#zt-userwrap6 .span3 {
-    padding: 0 15px;
-    width: 25%;
-}
-#zt-userwrap6 .modulecontent {
-    background-color: #f3f3f3;
-}
-.support-box {
-    min-height: 400px;
-    padding: 14px 22px;
-    position: relative;
-}
-
-.support-box p {
-    margin: 0;
-    margin-bottom: 40px;
-}
-.support-box .button {
-    position: absolute;
-    bottom: 0;
-}
-#zt-userwrap6 h3 {
-    font-size: 30px;
-    line-height: 30px;
-    margin-top: 0;
-}
-#zt-userwrap6 p {
-    font-size: 18px;
-    line-height: 26px;
-}
-#zt-userwrap6 strong {
-    font-size: 14px;
-    line-height: 14px;
-}
-/*
-* ===== Userwrap 7
-*/
-#zt-userwrap7 {
-    color: #eeeaea;
-    background-color: #252530;
-}
-#zt-userwrap7 h4 {
-    margin-bottom: 5px;
-}
-#zt-userwrap7 p {
-    margin-top: 0;
-    font-size: 16px;
-    line-height: 20px;
-}
-
-#zt-userwrap7 h3.moduletitle {
-    font-size: 24px;
-    line-height: 24px;
-    font-weight: 300;
-}
-/* Customized borders */
-#zt-userwrap7 .span3 {
-    width: 25%;
-    border-right: thin dotted #eeeaea;
-}
-#zt-userwrap7 .moduletable {
-    min-height: 360px;
-    padding: 0 15px;
-}
-#zt-userwrap7 a {
-    color: #eeeaea;
-    font-weight: bold;
-}
-.grayed {
-    margin: 0;
-    color: #d6d1d1 !important;
-}
 
 .slider { margin: 50px 0 10px!important;}
 
@@ -268,7 +190,7 @@ html.side-nav-open body {
     background-color: rgba(27, 29, 32, 0.100);
 }
 
-.calendarHeader {
+.TMHeader {
 
     font-size: 60px;
     line-height: 62px;
