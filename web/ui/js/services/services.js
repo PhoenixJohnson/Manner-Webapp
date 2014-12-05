@@ -82,7 +82,7 @@ TM.factory('Users', [ '$resource','TM.config',function($resource,config) {
     });
 } ]);
 //User
-mannerServices.factory('User', [ '$resource', function($resource) {
+TM.factory('User', [ '$resource', function($resource) {
 	return $resource('http://localhost:8080/manner-ci/api/users', {}, {
 		'query' : {
 			url:'http://localhost:8080/manner-ci/api/users/:userId',
