@@ -102,12 +102,13 @@ tr:hover {
   -o-user-select: none;
   user-select: none;
 }
+
 .side-nav ul {
   width: 200px;
   margin: 0;
   padding: 0;
 }
-
+/*
 .side-nav li a {
   display: block;
   position: relative;
@@ -131,7 +132,7 @@ html.side-nav-open {
 html.side-nav-open body {
   padding-left: 0;
 }
-
+*/
 .list-group-item-x {
 	position: relative;
 	display: block;

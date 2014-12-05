@@ -1,0 +1,14 @@
+{
+"menuContent": [ 
+{ "text":"Team" , "clickFn":"testclick" ,"type":"a","iconClass":"icon team"},
+{ "text":"Portfolio" , "clickFn":"testclick1" ,"type":"a","iconClass":"icon portfolio"},
+{ "text":"About" , "clickFn":"testclick2" ,"type":"a","iconClass":"icon about"},
+{ "text":"Library" , "clickFn":"testclick3" ,"type":"a","iconClass":"icon library"},
+{ "text":"How We Help" ,  "type":"text"},
+{ "text":"Team" , "clickFn":"testclick4" ,"type":"a","iconClass":"icon team"},
+{ "text":"Team" , "clickFn":"testclick5" ,"type":"a","iconClass":"icon team"},
+{ "text":"Team" , "clickFn":"testclick6" ,"type":"a","iconClass":"icon team"},
+{ "text":"Team" , "clickFn":"testclick7" ,"type":"a","iconClass":"icon team"},
+{ "text":"Team" , "clickFn":"testclick8" ,"type":"a","iconClass":"icon team"}
+]
+}

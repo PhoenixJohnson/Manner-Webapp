@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="css/flexslider.css"/>
     <link rel="stylesheet" type="text/css" href="css/fullcalendar.css"/>
     <link rel="stylesheet" type="text/css" href="css/app.css"/>
-
+    <link rel="stylesheet" type="text/css" href="css/LeftMenu.css"/>
 </head>
 
 <body ng-app="TM">
@@ -86,7 +86,7 @@
 <script src="js/directives/reportDirective.js"></script>
 <script src="js/directives/addActionItem.js"></script>
 <script src="js/directives/notifications/notyDirective.js"></script>
-
+<script src="js/directives/LeftMenuDirective.js"></script>
 
 
 
@@ -122,7 +122,12 @@
 
 <div ng-include="'partials/navbar-top.html'"></div>
 <!-- ng routes hook -->
-<div ng-view class="zt-slideshow"></div>
-<div ng-include="'partials/navbar-bottom.html'"></div>
+<div ng-controller="testLMCtrl">
+		<left-menu></left-menu>
+</div>
+<div>
+	<div ng-view class="zt-slideshow"></div>
+	<div ng-include="'partials/navbar-bottom.html'"></div>
+</div>
 </body>
 </html>
