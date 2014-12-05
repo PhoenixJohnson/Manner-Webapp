@@ -2,6 +2,9 @@
 /*********************************
   Page footer
 */
+.page{
+	 position:absolute;
+}
 .page-footer {
   clear: both;
   width: 100%;
@@ -40,12 +43,13 @@ body {
   -webkit-transition: -webkit-transform 0.28s ease-in-out;
   transition: transform 0.28s ease-in-out;
 }
+/*
 .nav-collapsed .content-frame {
   -ms-transform: translate(0px, 0);
   -moz-transform: translate(0px, 0);
   -webkit-transform: translate3d(0px, 0, 0);
   transform: translate(0px, 0);
-}
+}*/
 .pin-frame {
   position: fixed;
   top: 0;
@@ -91,6 +95,7 @@ html.side-nav-always-open .content-frame {
   transform: none;
 }
 .side-nav {
+  float:left; position:relative;
   position: fixed;
   left: 0;
   top: 0;
@@ -169,21 +174,42 @@ html.side-nav-always-open .content-frame {
 .side-nav ul {
   width: 200px;
 }
-.side-nav li a {
-  display: block;
+.withoutlineheight {
+  display: inline;
   position: relative;
   font-size: 16px;
   font-weight: 300;
   color: inherit;
   color: #aaaaaa;
+  padding-left: 20px;
+ /*
   line-height: 44px;
-  padding-left: 50px;
+  
   border-top: 1px #2d2d2d solid;
+  */
+}
+.withlineheight {
+  color: inherit;
+  color: #aaaaaa;
+  line-height: 44px;
+  border-top: 1px #2d2d2d solid;
+}
+.side-nav .icon {
+  display: block;
+  position: relative;
+  float:left;
+  top: 1px;
+  left: 5px;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  opacity: 0.4;
+  background-image: url(../../nav-icons.svg);
 }
 .side-nav li a.selected {
   color: #e3bc28;
 }
-.side-nav li:last-child a {
+#menuContent ul:last-child li {
   border-bottom: 1px #2d2d2d solid;
 }
 .side-nav h3 {
@@ -198,20 +224,8 @@ html.side-nav-always-open .content-frame {
   -o-transition: opacity ease-in-out 0.28s;
   transition: opacity ease-in-out 0.28s;
 }
-.side-nav .icon {
-  display: block;
-  position: absolute;
-  top: 1px;
-  left: 5px;
-  width: 40px;
-  height: 40px;
-  overflow: hidden;
-  opacity: 0.4;
-  background-image: url(../../nav-icons.svg);
-  
-  
-}
-.side-nav li a.selected .icon {
+
+.side-nav .selected .icon {
   opacity: 1.0;
 }
 .side-nav .icon.team {
@@ -280,8 +294,8 @@ html.side-nav-always-open .content-frame {
 .side-nav .selected .icon.product {
   background-position: -57px -440px !important;
 }
-.no-touch .side-nav li a:hover {
-  background: #111;
+.highlight{
+	background:#111;
 }
 .ie8 .side-nav .icon {
 }
@@ -364,3 +378,13 @@ html.side-nav-always-open .content-frame {
 	color:#AAA;
 	font-size:20px;
 }
+
+.triangle-up {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid red;
+}
+
+

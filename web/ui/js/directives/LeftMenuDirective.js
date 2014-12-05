@@ -30,24 +30,20 @@ TM.directive('leftMenu', [function () {
   		link:function(scope, element, attrs){
   				
   				scope.$on("leftMenuContents",function(event,data){
-	  				console.log(data);
 	  				//generate left menu element
 	  				var lmcs = data.menuContent;
 	  				if(typeof lmcs !='null'&& lmcs != undefined && lmcs!=null){
 	  					var menuContentDiv = element.find("#menuContent");
 	  					var hasUl = false;
 	  					var uli;
-	  					console.log(lmcs.length);
 	  		  			for(var i=0 ; i<lmcs.length; i++ ){
-	//  		  				console.log(lmcs[i].text+':::'+lmcs[i].type);
 	  		  				if('a'==lmcs[i].type){
 	  		  					if(!hasUl){
 	  		  						menuContentDiv.append('<ul id="ul'+i+'">');
 	  		  						uli = element.find('#ul'+i);
 	  		  						hasUl = true;
 	  		  					}
-	//  		  				 ng-click="'+lmcs[i].clickFn+'"
-	  		  					uli.append('<li><a href id="'+lmcs[i].clickFn+'"><span>'+lmcs[i].text+'</span> <i class="'+lmcs[i].iconClass+'"></i></a></li>');
+	  		  					uli.append('<li class="withlineheight"><span class="i '+lmcs[i].clickFn +'"> <i class="'+lmcs[i].iconClass+' "></i></span> <a class="withoutlineheight"  id="'+lmcs[i].clickFn+'">'+lmcs[i].text+'</a></li>');
 	  		  				}else if('text'==lmcs[i].type){
 	  		  					if(hasUl){
 	  		  						hasUl = false;
@@ -62,21 +58,38 @@ TM.directive('leftMenu', [function () {
 	  		  			  var sideNav = $('.side-nav');
 	  		  			  var topNav = $('.top-nav');
 	  		  			  var navItems = $("li a", sideNav);
+	  		  			  var a_i = $('.i');
+	  		  			  var withoutlineheight_a =$('.withoutlineheight');
+	  		  			  var withlineheight_a =$('.withlineheight');
 	  		  			  
-	  		  			  (function init() {
+	  		  			  (function() {
 	  		  				$(function() { setTimeout(collapse, 1200); });
-	  		  				 
-	  		  			    sideNav.mouseenter(expand).mouseleave(collapse);
-	  		  			      
-	  		  			    navItems.on('mouseenter', expand);
-	  		  			    navItems.click(navItemClicked);
-	  		  			    $('.top-nav a').click(navItemClicked);
-	  		  			    
+	  		  			    sideNav
+	  		  			    .mouseleave(function(){setTimeout(collapse, 3000);});
+	  		  			    withlineheight_a.mouseenter(movein);
+	  		  			    a_i.click(navItemClicked);
+	  		  			    withoutlineheight_a.click(aclick);
 	  		  			  })();
+	  		  			  function movein(){
+	  		  				  withlineheight_a.removeClass('highlight');
+	  		  				  $(this).addClass('highlight');
+	  		  			  }
+	  		  			  function aclick(){
+	  		  				  var id = $(this).attr('id');
+			  				  navItems.removeClass('selected');
+			  				  a_i.removeClass('selected');
+	  		  				  $('.'+id).addClass('selected');
+	  		  				  $(this).addClass('selected');
+	  		  				  expand();
+	  		  				  scope.$emit('fnname',id);
+	  		  			  }
 	  		  			  function navItemClicked() {
 			  				  navItems.removeClass('selected');
-			  				  $(this).addClass('selected');
-			  				  scope.$emit('fnname', $(this).attr('id'));
+			  				  a_i.removeClass('selected');
+			  				  expand();
+			  				  var id = $(this).attr('class').replace('i ','').replace(' ','');
+	  		  				  $('#'+id).addClass('selected');
+	  		  				  $(this).addClass('selected');
 	  		  			  };
 	  		  			  function collapse() {
 	  		  				  $('body').addClass('nav-collapsed');
