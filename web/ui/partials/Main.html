@@ -143,7 +143,7 @@
 <!-- Notifications -->
 <!--<div noty ng-repeat="n in notifications"/>-->
 <!-- update Item -->
-<div class="modal fade" id="updateTask" tabindex="-1" role="dialog" aria-labelledby="taskCreateLabel"
+<div class="modal fade" id="updateTask" tabindex="-1" role="dialog" aria-labelledby="updateTaskLabel"
      aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -156,39 +156,25 @@
                 <form role="form" ng-controller="DataRetrieve">
                     <div class="form-group">
                         <label>Email address</label>
-                        <input type="email" class="form-control" placeholder="Enter email">
+                        <input disabled type="email" class="form-control" placeholder="Enter email" ng-model="modItemEmail">
                     </div>
                     <div class="form-group">
-                        <div class="dropdown">
-                            <div class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                Select Task Type <span class="caret"></span></div>
-                            <ul class="dropdown-menu" role="menu">
-                                <div ng-repeat="name in itemTypeNames">
-                                    <li ng-click="selectType(name)" class="TMSelectItem"><a>{{name}}</a></li>
-                                </div>
-                            </ul>
-                        </div>
+                        <label>Task Type</label>
                         <input disabled class="form-control" placeholder="Please select one first"
-                               ng-model="itemTypeName">
-
-                        <!--<label for="exampleInputPassword1">Password</label>-->
-                        <!--<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">-->
+                               ng-model="modItemTypeName">
                     </div>
                     <div class="form-group">
                         <label ng-show="!isTicket()">Description Input</label>
                         <label ng-show="isTicket()">Ticket Number</label>
-                        <input type="text" class="form-control" ng-model="desNumber" required/>
-                        <!--<label>File input</label>-->
-                        <!--<input type="file" id="exampleInputFile">-->
-                        <!--<p class="help-block">Example block-level help text here.</p>-->
+                        <input disabled type="text" class="form-control" ng-model="modDesNumber" required/>
                     </div>
                     <div class="form-group">
-                        <label ng-show="!completed">Target Complete Date</label>
-                        <input ng-show="!completed" type="date" class="form-control" ng-model="targetCompleteDate"/>
+                        <label ng-show="!modCompleted">Target Complete Date</label>
+                        <input disabled ng-show="!modCompleted" class="form-control" ng-model="modTargetCompleteDate"/>
                     </div>
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" ng-model="completed"> Completed
+                            <input type="checkbox" ng-model="modCompleted"> Completed
                         </label>
                     </div>
                     <button type="submit" class="btn btn-default">Submit</button>
