@@ -156,13 +156,16 @@
             <div class="modal-body">
                 <form role="form" ng-controller="DataRetrieve">
                     <div class="form-group">
+                        <input disabled ng-show="false" class="form-control" ng-model="modTaskId" />
+                    </div>
+                    <div class="form-group">
                         <label>Email address</label>
-                        <input disabled type="email" class="form-control" placeholder="Enter email" ng-model="modItemEmail">
+                        <input disabled type="email" class="form-control" placeholder="Enter email" ng-model="modItemEmail" />
                     </div>
                     <div class="form-group">
                         <label>Task Type</label>
                         <input disabled class="form-control" placeholder="Please select one first"
-                               ng-model="modItemTypeName">
+                               ng-model="modItemTypeName" />
                     </div>
                     <div class="form-group">
                         <label ng-show="!isTicket()">Description Input</label>
@@ -175,10 +178,10 @@
                     </div>
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" ng-model="modCompleted"> Completed
+                            <input type="checkbox" ng-model="modCompleted" /> Completed
                         </label>
                     </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
+                    <button ng-disabled="!modCompleted" type="submit" class="btn btn-default" ng-click="updateTaskSubmit(modTaskId, modCompleted)">Submit</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </form>
             </div>
