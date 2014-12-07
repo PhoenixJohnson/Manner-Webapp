@@ -203,6 +203,12 @@ html.side-nav-open body {
 
 }
 
+.list-group-x {
+    background:rgba(238, 234, 234, 0.7);
+    /*margin-bottom: 20px;*/
+    min-height: 270px;
+    padding-left: 0
+}
 /*#top-nav{*/
     /*background-color: #60d1ff;*/
 

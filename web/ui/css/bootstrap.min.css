@@ -5192,8 +5192,7 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
 
 .list-group {
 	background:rgba(238, 234, 234, 0.7);
-	min-height: 270px;
-    /*margin-bottom: 20px;*/
+    margin-bottom: 20px;
     padding-left: 0
 }
 
