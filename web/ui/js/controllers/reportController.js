@@ -1,4 +1,4 @@
-TM.controller('reportCtrl', ['$scope','ReoprtData','Groups','Members','Items',function ($scope) {
+TM.controller('reportCtrl', ['$scope','Groups','Members','Items',function($scope,Groups,Members,Items){
 
     $scope.reportNames = [
         'Team Member Workload',
@@ -34,11 +34,6 @@ TM.controller('reportCtrl', ['$scope','ReoprtData','Groups','Members','Items',fu
 
         }
     }
-    $scope.searchReport=function(){
-		ReoprtData.query({email:$scope.email},function(e){
-			$scope.reportData=e;
-		});
-	}
 	$scope.searchGroups=function(){
 		Groups.query({userId:$scope.userId},function(e){
 			$scope.reportData=e;
@@ -46,16 +41,6 @@ TM.controller('reportCtrl', ['$scope','ReoprtData','Groups','Members','Items',fu
 	}
 	$scope.searchMembers=function(){
 		Members.query({groupId:$scope.groupId},function(e){
-			$scope.reportData=e;
-		});
-	}
-	$scope.searchItemsByOwner=function(){
-		Items.query({userId:$scope.userId},function(e){
-			$scope.reportData=e;
-		});
-	}
-	$scope.searchItemsByGroup=function(){
-		Items.query({groupId:$scope.groupId},function(e){
 			$scope.reportData=e;
 		});
 	}
