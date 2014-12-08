@@ -149,7 +149,7 @@ TM.factory('AuthService',
 
 //Groups
 TM.factory('Groups', [ '$resource', function($resource) {
-	return $resource(mannerServicesUrl+'users/:userId/groups', {}, {
+	return $resource(config.RESTAPIBASEURL+'users/:userId/groups', {}, {
 		'query' : {
 			method : 'GET',
 			isArray : false,
@@ -161,7 +161,7 @@ TM.factory('Groups', [ '$resource', function($resource) {
 
 //Members
 TM.factory('Members', [ '$resource', function($resource) {
-	return $resource(mannerServicesUrl+'groups/:groupId/users', {}, {
+	return $resource(config.RESTAPIBASEURL+'groups/:groupId/users', {}, {
 		'query' : {
 			method : 'GET',
 			isArray : false,
@@ -175,13 +175,13 @@ TM.factory('Members', [ '$resource', function($resource) {
 TM.factory('Items', [ '$resource', function($resource) {
 	return $resource('', {}, {
 		'queryAfter' : {
-			url:mannerServicesUrl+'items/search/countByOwnerAndCompletionDateAfter',
+			url:config.RESTAPIBASEURL+'items/search/countByOwnerAndCompletionDateAfter',
 			method : 'GET',
 			isArray : false,
 			cache : false
 		},
 		'queryBefore' : {
-			url:mannerServicesUrl+'items/search/countByOwnerAndCompletionDateBefore',
+			url:config.RESTAPIBASEURL+'items/search/countByOwnerAndCompletionDateBefore',
 			method : 'GET',
 			isArray : false,
 			cache : false

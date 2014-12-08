@@ -155,4 +155,3 @@ TM.run(function ($rootScope, $location, $http, $timeout, AuthService, RESTServic
         {id: "5", status: "star-empty", desc: "Lorem ipsum dolor sit amet", date:"2014/09/16"}
     ];
 });
-var mannerServicesUrl="http://localhost:8080/manner/";
