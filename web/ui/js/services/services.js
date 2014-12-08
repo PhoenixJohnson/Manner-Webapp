@@ -146,3 +146,46 @@ TM.factory('AuthService',
      };
  }
 );
+
+//Groups
+TM.factory('Groups', [ '$resource', function($resource) {
+	return $resource(mannerServicesUrl+'users/:userId/groups', {}, {
+		'query' : {
+			method : 'GET',
+			isArray : false,
+			cache : false
+		},
+		'update' : {}
+	});
+} ]);
+
+//Members
+TM.factory('Members', [ '$resource', function($resource) {
+	return $resource(mannerServicesUrl+'groups/:groupId/users', {}, {
+		'query' : {
+			method : 'GET',
+			isArray : false,
+			cache : false
+		},
+		'update' : {}
+	});
+} ]);
+
+//Items
+TM.factory('Items', [ '$resource', function($resource) {
+	return $resource('', {}, {
+		'queryAfter' : {
+			url:mannerServicesUrl+'items/search/countByOwnerAndCompletionDateAfter',
+			method : 'GET',
+			isArray : false,
+			cache : false
+		},
+		'queryBefore' : {
+			url:mannerServicesUrl+'items/search/countByOwnerAndCompletionDateBefore',
+			method : 'GET',
+			isArray : false,
+			cache : false
+		},
+		'update' : {}
+	});
+} ]);

@@ -13,8 +13,7 @@ var TM = angular.module('TM',
         //Plugins
         'ui.calendar',
         'clockPlugin',
-        'angularModalService'
-
+        'angularModalService',
     ]);
 
 //var filters = angular.module('TM.filters', []);
@@ -102,11 +101,7 @@ TM.run(function ($rootScope, $location, $http, $timeout, AuthService, RESTServic
             $rootScope.listData = data;
         }
     );
-    // async load left menu content
-    $rootScope.restService.get('data/leftMenu.json', function(data) {
-        $rootScope.$broadcast('leftMenuContents', data);
-    });
- 
+
     // *****
     // Initialize authentication
     // *****
@@ -160,3 +155,4 @@ TM.run(function ($rootScope, $location, $http, $timeout, AuthService, RESTServic
         {id: "5", status: "star-empty", desc: "Lorem ipsum dolor sit amet", date:"2014/09/16"}
     ];
 });
+var mannerServicesUrl="http://localhost:8080/manner/";
