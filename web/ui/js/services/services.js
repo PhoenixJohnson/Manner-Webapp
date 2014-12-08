@@ -57,18 +57,7 @@ TM.factory('RESTService',
  }
 );
 
-//items
-TM.factory('Items', [ '$resource','TM.config',function($resource,config) {
-    return $resource( config.RESTAPIBASEURL+'items', {}, {
-        'query' : {
-            method : 'GET',
-            isArray : false,
-            cache : false,
-            responseType:'json'
-        },
-        'update' : {}
-    });
-} ]);
+
 //Users
 TM.factory('Users', [ '$resource','TM.config',function($resource,config) {
     return $resource( config.RESTAPIBASEURL+'users', {}, {
