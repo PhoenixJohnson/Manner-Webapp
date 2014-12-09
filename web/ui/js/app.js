@@ -65,7 +65,7 @@ TM.config(['$routeProvider', '$locationProvider', '$httpProvider', function ($ro
     });
 
     // note that to minimize playground impact on app.js, we
-    // are including just this simple route with a parameterized 
+    // are including just this simple route with a parameterized
     // partial value (see playground.js and playground.html)
 //    $routeProvider.when('/playground/:widgetName', {
 //        templateUrl: 'playground/playground.html',
@@ -146,7 +146,7 @@ TM.run(function ($rootScope, $location, $http, $timeout, AuthService, RESTServic
 
     // TODO move this out to a more appropriate place
 
-    
+
     // main.html test data
     $rootScope.postBoard = [
         {status: "danger", type: "SA", desc: "Lorem ipsum dolor sit amet", date:"2014/09/11"},
@@ -163,3 +163,16 @@ TM.run(function ($rootScope, $location, $http, $timeout, AuthService, RESTServic
         {id: "5", status: "star-empty", desc: "Lorem ipsum dolor sit amet", date:"2014/09/16"}
     ];
 });
+
+var BMITEAMMEMBERS = [
+    "Phoenix",
+    "Jason",
+    "Henry",
+    "Dennis",
+    "Leo",
+    "Candy",
+    "Tony",
+    "Gavan",
+    "Derek",
+    "Frank"
+];
