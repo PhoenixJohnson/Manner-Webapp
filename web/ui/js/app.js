@@ -157,4 +157,24 @@ TM.run(function ($rootScope, $location, $http, $timeout, AuthService, RESTServic
         {id: "4", status: "star-empty", desc: "Lorem ipsum dolor sit amet", date:"2014/09/14"},
         {id: "5", status: "star-empty", desc: "Lorem ipsum dolor sit amet", date:"2014/09/16"}
     ];
+
+
+
+
 });
+
+//Report test usage
+
+var BMITEAMMEMBERS = [
+    "Phoenix",
+    "Jason",
+    "Henry",
+    "Dennis",
+    "Leo",
+    "Candy",
+    "Tony",
+    "Gavan",
+    "Derek",
+    "Frank"
+];
+

@@ -88,6 +88,7 @@
 <script src="js/directives/reportDirective.js"></script>
 <script src="js/directives/addActionItem.js"></script>
 <script src="js/directives/notifications/notyDirective.js"></script>
+<script src="js/directives/LeftMenuDirective.js"></script>
 
 
 
@@ -123,10 +124,10 @@
 <!--Pre load modals -->
 
 <div ng-include="'partials/navbar-top.html'"></div>
-<!-- ng routes hook -->
-<!--<div ng-controller="testLMCtrl">-->
-    <!--<left-menu></left-menu>-->
-<!--</div>-->
+ <!--ng routes hook-->
+<div ng-controller="testLMCtrl">
+    <left-menu></left-menu>
+</div>
 <div ng-view class="zt-slideshow"></div>
 <div ng-include="'partials/navbar-bottom.html'"></div>
 </body>
