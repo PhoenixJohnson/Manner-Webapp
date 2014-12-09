@@ -175,6 +175,12 @@ TM.factory('Items', [ '$resource','TM.config', function($resource,config) {
 			isArray : false,
 			cache : false
 		},
+        'queryTop5' : {
+            url:config.RESTAPIBASEURL+'items?size=5',
+            method : 'GET',
+            isArray : false,
+            cache : false
+        },
 		'update' : {}
 	});
 } ]);
