@@ -137,7 +137,7 @@ TM.factory('AuthService',
 );
 
 //Groups
-TM.factory('Groups', [ '$resource', function($resource) {
+TM.factory('Groups', [ '$resource','TM.config', function($resource,config) {
 	return $resource(config.RESTAPIBASEURL+'users/:userId/groups', {}, {
 		'query' : {
 			method : 'GET',
@@ -149,7 +149,7 @@ TM.factory('Groups', [ '$resource', function($resource) {
 } ]);
 
 //Members
-TM.factory('Members', [ '$resource', function($resource) {
+TM.factory('Members', [ '$resource','TM.config', function($resource,config) {
 	return $resource(config.RESTAPIBASEURL+'groups/:groupId/users', {}, {
 		'query' : {
 			method : 'GET',
@@ -161,7 +161,7 @@ TM.factory('Members', [ '$resource', function($resource) {
 } ]);
 
 //Items
-TM.factory('Items', [ '$resource', function($resource) {
+TM.factory('Items', [ '$resource','TM.config', function($resource,config) {
 	return $resource('', {}, {
 		'queryAfter' : {
 			url:config.RESTAPIBASEURL+'items/search/countByOwnerAndCompletionDateAfter',
