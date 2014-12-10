@@ -9,7 +9,7 @@ TM.controller('DataRetrieve',['$scope','Items','Users',function($scope, Items,Us
 
 
 
-    $scope.items =Items.query();
+    $scope.items =Items.queryTop5();
 	$scope.users=Users.query();
     $scope.slides = [
         "Personal Action List",
@@ -50,17 +50,10 @@ TM.controller('DataRetrieve',['$scope','Items','Users',function($scope, Items,Us
 
     $scope.updateT =function(item){
 
-    	$scope.modTaskId = item.id;
-    	$scope.modItemEmail = item.email;
-    	$scope.modItemTypeName = item.type;
-        $scope.modCompleted=item.completed;
-        $scope.modDesNumber=item.title;
-        $scope.modTargetCompleteDate=item.dueDate;
+        $scope.completed=true;
+        $scope.desNumber=item.title;
+        $scope.targetCompleteDate=item.dueDate;
 
-    }
-    
-    $scope.updateTaskSubmit = function(id, completed){
-    	alert("Update task, Task ID: " + id);
     }
 
 }]);

@@ -1,19 +1,18 @@
 // declare top-level module which depends on filters,and services
 var TM = angular.module('TM',
     [
-//        'TM.filters',
+//        'TM.filter',
 //        'TM.directives', // custom directives
 //        'TM.controllers',
 //        'TM.services',
-        'TM.reports',
-        'angular-flexslider',
         'ngRoute',
         'ngResource',
-        'ngGrid',    // angular grid
-        //Plugins
         'ui.calendar',
         'clockPlugin',
         'angularModalService',
+      'TM.reports',
+      'angular-flexslider',
+      'ngGrid'    // angular grid
     ]);
 
 //var filters = angular.module('TM.filters', []);
@@ -56,7 +55,8 @@ TM.config(['$routeProvider', '$locationProvider', '$httpProvider', function ($ro
     });
 
     $routeProvider.when('/Reports',{
-        templateUrl: 'reports/reportMain.html'
+        templateUrl: 'reports/reportMain.html',
+        controller:'reportCtrl'
     });
 
     // note that to minimize playground impact on app.js, we
