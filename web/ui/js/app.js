@@ -101,7 +101,10 @@ TM.run(function ($rootScope, $location, $http, $timeout, AuthService, RESTServic
             $rootScope.listData = data;
         }
     );
-
+    // async load left menu content
+    $rootScope.restService.get('data/leftMenu.json', function(data) {
+        $rootScope.$broadcast('leftMenuContents', data);
+    });
     // *****
     // Initialize authentication
     // *****
