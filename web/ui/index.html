@@ -33,6 +33,7 @@
     <link rel="stylesheet" type="text/css" href="css/fullcalendar.css"/>
     <link rel="stylesheet" type="text/css" href="css/LeftMenu.css"/>
     <link rel="stylesheet" type="text/css" href="css/app.css"/>
+    <link rel="stylesheet" type="text/css" href="css/ng-table.css"/>
 
 
 </head>
@@ -58,6 +59,7 @@
 <!--<script src="js/vendor/HighCharts/highcharts-all.js"></script>-->
 <script src="js/vendor/HighCharts/highcharts.js"></script>
 <script src="js/vendor/HighCharts/highcharts-3d.js"></script>
+<script src="js/vendor/ng-table/ng-table.js"></script>
 
 <!-- External tools inputting -->
 
@@ -88,6 +90,7 @@
 <script src="js/directives/reportDirective.js"></script>
 <script src="js/directives/addActionItem.js"></script>
 <script src="js/directives/notifications/notyDirective.js"></script>
+<script src="js/directives/LeftMenuDirective.js"></script>
 
 
 
@@ -99,6 +102,7 @@
 <script src="js/controllers/pluginControllers.js"></script>
 <script src="js/controllers/reportController.js"></script>
 <script src="js/controllers/addItemController.js"></script>
+<script src="js/controllers/personalActionController.js"></script>
 
 
 <script src="js/Reports/reportRouter.js"></script>
@@ -124,9 +128,9 @@
 
 <div ng-include="'partials/navbar-top.html'"></div>
 <!-- ng routes hook -->
-<!--<div ng-controller="testLMCtrl">-->
-    <!--<left-menu></left-menu>-->
-<!--</div>-->
+<div ng-controller="testLMCtrl">
+    <left-menu></left-menu>
+</div>
 <div ng-view class="zt-slideshow"></div>
 <div ng-include="'partials/navbar-bottom.html'"></div>
 </body>

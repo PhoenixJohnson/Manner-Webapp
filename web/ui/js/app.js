@@ -12,7 +12,8 @@ var TM = angular.module('TM',
         'angularModalService',
       'TM.reports',
       'angular-flexslider',
-      'ngGrid'    // angular grid
+      'ngGrid',    // angular grid
+      'ngTable'
     ]);
 
 //var filters = angular.module('TM.filters', []);
@@ -57,6 +58,10 @@ TM.config(['$routeProvider', '$locationProvider', '$httpProvider', function ($ro
     $routeProvider.when('/Reports',{
         templateUrl: 'reports/reportMain.html',
         controller:'reportCtrl'
+    });
+    $routeProvider.when('/personalActionList',{
+    	templateUrl: 'partials/personalActionList.html',
+    	controller:'personalActionController'
     });
 
     // note that to minimize playground impact on app.js, we

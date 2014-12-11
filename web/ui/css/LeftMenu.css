@@ -95,7 +95,8 @@ html.side-nav-always-open .content-frame {
   transform: none;
 }
 .side-nav {
-  float:left; position:relative;
+  z-index:998;
+  float:left; 
   position: fixed;
   left: 0;
   top: 0;
