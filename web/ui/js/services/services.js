@@ -70,8 +70,6 @@ TM.factory('Users', [ '$resource','TM.config',function($resource,config) {
         'update' : {}
     });
 } ]);
-
-
 //User
 TM.factory('User', [ '$resource', function($resource) {
 	return $resource('http://localhost:8080/manner-ci/api/users', {}, {
@@ -177,12 +175,24 @@ TM.factory('Items', [ '$resource','TM.config', function($resource,config) {
 			isArray : false,
 			cache : false
 		},
-        'queryTop5' : {
-            url:config.RESTAPIBASEURL+'items?size=5',
-            method : 'GET',
-            isArray : false,
-            cache : false
-        },
 		'update' : {}
 	});
 } ]);
+
+//Report
+TM.factory('Report', [ '$resource','TM.config', function($resource,config) {
+	return $resource('', {}, {
+		'query' : {
+			url:config.RESTAPIBASEURL+'api/report',
+			method : 'GET',
+			params:{
+				userId:5,
+				date:2014-12-1
+			},
+			isArray : false,
+			cache : false
+		},
+		'update' : {}
+	});
+} ]);
+

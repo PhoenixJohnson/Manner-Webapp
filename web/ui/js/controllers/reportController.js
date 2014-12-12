@@ -1,4 +1,4 @@
-TM.controller('reportCtrl', ['$scope','Groups','Members','Items',function($scope,Groups,Members,Items){
+TM.controller('reportCtrl', ['$scope','Groups','Members','Items','Report',function($scope,Groups,Members,Items,Report){
 
     $scope.reportNames = [
         'Team Member Workload',
@@ -46,6 +46,11 @@ TM.controller('reportCtrl', ['$scope','Groups','Members','Items',function($scope
 	}
 	$scope.searchItemsByDate=function(){
 		Items.queryBefore({ownerId:$scope.ownerId,date:$scope.date},function(e){
+			$scope.reportData=e;
+		});
+	}
+	$scope.searchReport=function(){
+		Report.query({userId:$scope.userId,date:$scope.date},function(e){
 			$scope.reportData=e;
 		});
 	}
