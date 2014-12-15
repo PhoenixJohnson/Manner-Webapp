@@ -1,16 +1,30 @@
 <div class="container-fluid zt-slideshow" fade-in>
 	<div class="page-header">
-	    <h1 class="TMHeader">Team Manner - Personal Action List</h1>
+	    <h1 class="TMHeader">Team Manner - Personal Action List </h1>
 	</div>
-	<div class="well">
+	<div class="list-group">
+	
+		<div class="btn-group" style="margin-bottom:5px; z-index:999" >
+		 	<button type="button" class="btn btn-primary dropdown-toggle">
+			   Column Select <span class="caret"></span>
+		 	</button>
+		 	<ul class="dropdown-menu" style="padding-left:15%" role="menu">
+			   	<label class="checkbox" ng-repeat="column in columns" ng-if="column.visibleOption">
+			   		<input type="checkbox" ng-model="column.visible" ng-click="changeTblWidth(column.field, column.visible);"/> {{column.title}}
+				</label>
+		 	</ul>
+		</div>
+		
 		 <table ng-table="tableParams" class="sls-org-ret-tbl table table-striped table-bordered"  id="sls_org_ret_tbl">
 			<thead>
 		        <tr style="height:50px">
+		        	<th>
+		        	</th>
 		            <th ng-repeat="column in columns" ng-show="column.visible"
 		                class="text-center sortable" ng-class="{
 		                    'sort-asc': tableParams.isSortBy(column.field, 'asc'),
 		                    'sort-desc': tableParams.isSortBy(column.field, 'desc')
-		                  }"
+		                  }" 
 		                ng-click="tableParams.sorting(column.field, tableParams.isSortBy(column.field, 'asc') ? 'desc' : 'asc')">
 		                <div>{{column.title}}</div>
 		            </th>
@@ -19,14 +33,16 @@
 			
 			<tbody ng-repeat="group in $groups">
 		        <tr class="ng-table-group">
-		            <td colspan="{{$columns.length}}">
+		            <td colspan="{{columns.length+1}}">
 		                <a href="" ng-click="group.$hideRows = !group.$hideRows">
 		                    <span class="glyphicon" ng-class="{ 'glyphicon-chevron-right': group.$hideRows, 'glyphicon-chevron-down': !group.$hideRows }"></span>
 		                    <strong>{{ group.value }}</strong>
 		                </a>
 		            </td>
 		        </tr>
-		        <tr ng-repeat="data in group.data"  ng-hide="group.$hideRows">
+		        <tr ng-repeat="data in group.data"  ng-hide="group.$hideRows" >
+		            
+		            <td><span class="glyphicon glyphicon glyphicon-star"></span></td>
 		            <td ng-repeat="column in columns" ng-show="column.visible" sortable="column.field" class="{{column.field}}-content-td">
 			                {{data[column.field]}}
 		            </td>

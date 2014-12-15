@@ -2,20 +2,20 @@ TM.
 controller('personalActionController', function($scope, $filter,ngTableParams,$http) {
     $scope.data=[];
     $scope.columns = [
-                      {title:'title',field:'title',visible:true,filter:{'title':'text'}},
-                      {title:'content',field:'content',visible:true,filter:{'content':'text'}},
-                      {title:'itemType',field:'itemType',visible:true,filter:{'itemType':'text'}},
-                      {title:'owner',field:'owner',visible:true,filter:{'owner':'text'}},
-                      {title:'createdBy',field:'createdBy',visible:true,filter:{'createdBy':'text'}},
-                      {title:'createdDate',field:'createdDate',visible:true,filter:{'createdDate':'text'}},
-                      {title:'lastModifiedBy',field:'lastModifiedBy',visible:true,filter:{'lastModifiedBy':'text'}},
-                      {title:'lastModifiedDate',field:'lastModifiedDate',visible:true,filter:{'lastModifiedDate':'text'}},
-                      {title:'group',field:'group',visible:true,filter:{'group':'text'}},
-                      {title:'status',field:'status',visible:true,filter:{'status':'text'}},
-                      {title:'percentage',field:'percentage',visible:true,filter:{'percentage':'text'}},
-                      {title:'dueDate',field:'dueDate',visible:true,filter:{'dueDate':'text'}},
-                      {title:'priority',field:'priority',visible:true,filter:{'priority':'text'}},
-                      {title:'remarks',field:'remarks',visible:true,filter:{'remarks':'text'}}
+                      {title:'title',field:'title',visible:true,filter:{'title':'text'},visibleOption:false},
+                      {title:'content',field:'content',visible:false,filter:{'content':'text'},visibleOption:true},
+                      {title:'itemType',field:'itemType',visible:true,filter:{'itemType':'text'},visibleOption:false},
+                      {title:'owner',field:'owner',visible:false,filter:{'owner':'text'},visibleOption:true},
+                      {title:'createdBy',field:'createdBy',visible:false,filter:{'createdBy':'text'},visibleOption:true},
+                      {title:'createdDate',field:'createdDate',visible:false,filter:{'createdDate':'text'},visibleOption:true},
+                      {title:'lastModifiedBy',field:'lastModifiedBy',visible:false,filter:{'lastModifiedBy':'text'},visibleOption:true},
+                      {title:'lastModifiedDate',field:'lastModifiedDate',visible:false,filter:{'lastModifiedDate':'text'},visibleOption:true},
+                      {title:'group',field:'group',visible:false,filter:{'group':'text'},visibleOption:true},
+                      {title:'status',field:'status',visible:true,filter:{'status':'text'},visibleOption:false},
+                      {title:'percentage',field:'percentage',visible:true,filter:{'percentage':'text'},visibleOption:true},
+                      {title:'dueDate',field:'dueDate',visible:true,filter:{'dueDate':'text'},visibleOption:true},
+                      {title:'priority',field:'priority',visible:true,filter:{'priority':'text'},visibleOption:true},
+                      {title:'remarks',field:'remarks',visible:false,filter:{'remarks':'text'},visibleOption:true}
                       ];
     
     $http.get('data/personalAction.json').success(function (largeLoad) {
@@ -30,8 +30,9 @@ controller('personalActionController', function($scope, $filter,ngTableParams,$h
    
     $scope.tableParams = new ngTableParams({
         page: 1,            // show first page
-        count: 10          // count per page
+        count: 5          // count per page
     }, {
+    	counts: [], // hide page counts control
         groupBy: 'itemType',
         total: $scope.data.length,
         getData: function($defer, params) {
@@ -43,39 +44,5 @@ controller('personalActionController', function($scope, $filter,ngTableParams,$h
         },
         $scope: $scope
     });
-    
-//	    $scope.data = [{name: "Moroni", age: 50, role: 'Administrator'},
-//	                {name: "Tiancum", age: 43, role: 'Administrator'},
-//	                {name: "Jacob", age: 27, role: 'Administrator'},
-//	                {name: "Nephi", age: 29, role: 'Moderator'},
-//	                {name: "Enos", age: 34, role: 'User'},
-//	                {name: "Tiancum", age: 43, role: 'User'},
-//	                {name: "Jacob", age: 27, role: 'User'},
-//	                {name: "Nephi", age: 29, role: 'Moderator'},
-//	                {name: "Enos", age: 34, role: 'User'},
-//	                {name: "Tiancum", age: 43, role: 'Moderator'},
-//	                {name: "Jacob", age: 27, role: 'User'},
-//	                {name: "Nephi", age: 29, role: 'User'},
-//	                {name: "Enos", age: 34, role: 'Moderator'},
-//	                {name: "Tiancum", age: 43, role: 'User'},
-//	                {name: "Jacob", age: 27, role: 'User'},
-//	                {name: "Nephi", age: 29, role: 'User'},
-//	                {name: "Enos", age: 34, role: 'User'}];
-//
-//	    $scope.tableParams = new ngTableParams({
-//	        page: 1,            // show first page
-//	        count: 10          // count per page
-//	    }, {
-//	        groupBy: 'role',
-//	        total: $scope.data.length,
-//	        getData: function($defer, params) {
-//	            var orderedData = params.sorting() ?
-//	                    $filter('orderBy')($scope.data, $scope.tableParams.orderBy()) :
-//	                    	$scope.data;
-//
-//	            $defer.resolve(orderedData.slice((params.page() - 1) * params.count(), params.page() * params.count()));
-//	        }
-//	    });
-//	
-	
+    $scope.count=0;
 });

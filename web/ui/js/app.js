@@ -13,7 +13,8 @@ var TM = angular.module('TM',
       'TM.reports',
       'angular-flexslider',
       'ngGrid',    // angular grid
-      'ngTable'
+      'ngTable',
+      'ui.bootstrap'
     ]);
 
 //var filters = angular.module('TM.filters', []);
