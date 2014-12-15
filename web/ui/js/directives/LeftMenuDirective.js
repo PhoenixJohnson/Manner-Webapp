@@ -108,7 +108,6 @@ TM.directive('leftMenu', [function () {
 .controller('testLMCtrl',['$scope',function($scope){
 	
 	$scope.$on('fnname', function(event,data) {
-		console.log('testLMCtrl', data);
 		if('testclick'==data){
 			$scope.testclick();
 		}else{

@@ -21,28 +21,27 @@ controller('personalActionController', function($scope, $filter,ngTableParams,$h
     $http.get('data/personalAction.json').success(function (largeLoad) {
     	$scope.data = largeLoad
     });
-    
     $scope.$watch('data',function(){
-    	console.log(1);
-    	$scope.tableParams.reload();
-    	console.log($scope.tableParams);
-    });
-   
-    $scope.tableParams = new ngTableParams({
-        page: 1,            // show first page
-        count: 5          // count per page
-    }, {
-    	counts: [], // hide page counts control
-        groupBy: 'itemType',
-        total: $scope.data.length,
-        getData: function($defer, params) {
-            var orderedData = params.sorting() ?
-                    $filter('orderBy')($scope.data, $scope.tableParams.orderBy()) :
-                    	$scope.data;
+    	console.log($scope.data.length);
+    	if($scope.data.length>0){
+    	    $scope.tableParams = new ngTableParams({
+    	        page: 1,            // show first page
+    	        count: 10          // count per page
+    	    }, {
+    	    	counts: [], // hide page counts control
+    	        groupBy: 'itemType',
+    	        total: $scope.data.length,
+    	        getData: function($defer, params) {
+    	            var orderedData = params.sorting() ?
+    	                    $filter('orderBy')($scope.data, $scope.tableParams.orderBy()) :
+    	                    	$scope.data;
 
-            $defer.resolve(orderedData.slice((params.page() - 1) * params.count(), params.page() * params.count()));
-        },
-        $scope: $scope
+    	            $defer.resolve(orderedData.slice((params.page() - 1) * params.count(), params.page() * params.count()));
+    	        },
+    	        $scope: $scope
+    	    });
+        	$scope.tableParams.reload();
+    	}
     });
-    $scope.count=0;
+    $scope.tableParams = new ngTableParams();
 });
