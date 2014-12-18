@@ -59,9 +59,12 @@ TM.controller('DataRetrieve',['$scope','Items','Users',function($scope, Items,Us
 
     $scope.updateT =function(item){
 
-        $scope.completed=true;
-        $scope.desNumber=item.title;
-        $scope.targetCompleteDate=item.dueDate;
+    	$scope.modTaskId = item.id;
+    	$scope.modItemTypeName = item.itemType;
+        $scope.modCompleted=true;
+        $scope.modDesNumber=item.title;
+        $scope.modTargetCompleteDate=item.dueDate;
+        $scope.modItemEmail = Tool.queryByUrl(item._links.owner.href).email;
 
     }
 

@@ -56,13 +56,16 @@ tr:hover {
     border-style: solid;
     border-width: 1px 1px 1px 5px;
 }
-.bs-callout-danger {
+.bs-callout-Urgent {
+    border-left-color: #ff0000;
+}
+.bs-callout-High {
     border-left-color: #d9534f;
 }
-.bs-callout-warning {
+.bs-callout-Medium {
     border-left-color: #f0ad4e;
 }
-.bs-callout-info {
+.bs-callout-Low {
     border-left-color: #5bc0de;
 }
 

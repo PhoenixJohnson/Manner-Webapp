@@ -14,9 +14,9 @@
                             <table class="table table-striped">
                                 <tbody>
                                 <tr data-toggle="modal" data-target="#updateTask"
-                                    ng-repeat="item in items._embedded.items" ng-click="updateT(item)">
-                                    <td><span class="bs-callout bs-callout-{{item.status}}"></span></td>
-                                    <td>{{item.priority}}</td>
+                                    ng-repeat="item in items" ng-click="updateT(item)">
+                                    <td><span class="bs-callout bs-callout-{{item.priority}}"></span></td>
+                                    <td>{{item.status}}</td>
                                     <td>{{item.title}}</td>
                                     <td>{{item.dueDate | date:"MM/dd/yyyy"}}</td>
                                     <td>{{item.content}}</td>
