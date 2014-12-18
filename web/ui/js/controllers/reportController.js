@@ -51,7 +51,7 @@ TM.controller('reportCtrl', ['$scope','Groups','Members','Items','Report',functi
 	}
 	$scope.searchReport=function(){
 		Report.query({userId:$scope.userId,date:$scope.date},function(e){
-			$scope.reportData=e;
+			$scope.reportData=e.data.Report;
 		});
 	}
 }]);
