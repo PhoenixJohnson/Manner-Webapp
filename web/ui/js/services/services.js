@@ -181,6 +181,11 @@ TM.factory('Items', [ '$resource','TM.config', function($resource,config) {
             isArray : false,
             cache : false
         },
+        'query' : {
+        	url : config.RESTAPIBASEURL+'items',
+        	method : 'GET',
+			isArray : false,
+			cache : false },
 		'update' : {}
 	});
 } ]);
@@ -189,11 +194,11 @@ TM.factory('Items', [ '$resource','TM.config', function($resource,config) {
 TM.factory('Report', [ '$resource','TM.config', function($resource,config) {
 	return $resource('', {}, {
 		'query' : {
-			url:config.RESTAPIBASEURL+'api/report',
+			url:config.RESTAPIBASEURL+'report',
 			method : 'GET',
 			params:{
-				userId:5,
-				date:2014-12-1
+				userId:'@userId',
+				date:'@date'
 			},
 			isArray : false,
 			cache : false
