@@ -12,7 +12,7 @@ TM.controller('DataRetrieve',['$scope','Items','Users',function($scope, Items,Us
    /* $scope.items =Items.queryTop5();
 	$scope.users=Users.query();*/
 	
-	Items.query(function(data){
+	Items.queryTop5(function(data){
     	$scope.items = data._embedded.items;
 	});
     
