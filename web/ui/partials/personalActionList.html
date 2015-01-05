@@ -3,7 +3,6 @@
 	    <h1 class="TMHeader">Team Manner - Personal Action List </h1>
 	</div>
 	<div class="list-group">
-	
 		<!--div class="btn-group" style="margin-bottom:5px; z-index:999" >
 		 	<button type="button" class="btn btn-primary dropdown-toggle">
 			   Column Select <span class="caret"></span>
@@ -14,7 +13,6 @@
 				</label>
 		 	</ul>
 		</div-->
-		
 		 <table ng-table="tableParams" class="sls-org-ret-tbl table table-striped table-bordered" id="sls_org_ret_tbl">
 		 
 			<thead>
@@ -45,6 +43,8 @@
 		        	ng-hide="group.$hideRows" 
 		            ng-click="showDetails(data)"
     	            ng-class="{'active': user.$selected}"
+    	            data-toggle="modal" 
+    	            data-target="#details"
 		        >
 		            
 		            <td><span class="glyphicon glyphicon glyphicon-star"></span></td>
@@ -66,13 +66,101 @@
 </div>
 
 
-
-
-
-
-    <!-- script type="text/ng-template" id="myModalContent.html">
-        <div class="modal-header">
-			Details
+<!-- details modal  -->
+<div class="modal fade" id="details" tabindex="-1" role="dialog" aria-labelledby="detailsLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
+                <h4 class="modal-title">Task Details</h4>
+            </div>
+            <div class="modal-body">
+                <form role="form">
+                    <div class="form-group">
+                        <input disabled ng-show="false" class="form-control" ng-model="modTaskId" />
+                    </div>
+                    <div class="form-group">
+                        <label>Title:</label>
+                        <label>{{detailObj.title}}</label>
+                    </div>
+                    <div class="form-group">
+                        <label>Content:</label>
+                        <label>{{detailObj.content}}</label>
+                    </div>
+                    <div class="form-group">
+                        <label>Group :</label>
+                        <label>{{detailObj.group.name}}</label>
+                    </div>
+                    <div class="form-group">
+                        <label>Owner :</label>
+                        <label>{{detailObj.owner.firstName}}&nbsp;{{detailObj.owner.lastName}}</label>
+                    </div>
+                    <div class="form-group">
+                        <label >Create By:</label>
+                        <label >{{detailObj.createdBy.firstName}}&nbsp;{{detailObj.createdBy.lastName}}</label>
+                    </div>
+                    <div class="form-group">
+                        <label >Create Date:</label>
+                        <label >{{detailObj.createdDate}}</label>
+                    </div>
+                    <div class="form-group">
+                        <label >Last Modified By:</label>
+                        <label >{{detailObj.lastModifiedBy.firstName}}&nbsp;{{detailObj.lastModifiedBy.lastName}}</label>
+                    </div>
+                    <div class="form-group">
+                        <label >Last Modified Date:</label>
+                        <label >{{detailObj.lastModifiedDate}}</label>
+                    </div>
+                    <div class="form-group">
+                        <label >Post By:</label>
+                        <label >{{detailObj.postBy.firstName}}&nbsp;{{detailObj.postBy.lastName}}</label>
+                    </div>
+                    <div class="form-group">
+                        <label >Status:</label>
+						<div class="dropdown" style="display:inline">
+							<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+						    	{{detailObj.status}}
+						    	<span class="caret"></span>
+						  	</button>
+						  	<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+							    <li style ="color:#000" role="presentation"><a href ng-click="test">Work In Progress</a></li>
+							    <li style ="color:#000" role="presentation"><a href >Complete</a></li>
+							    <li style ="color:#000" role="presentation"><a href >NEW</a></li>
+						  	</ul>
+						</div>                    
+					</div>
+					<div class="form-group">
+                        <label >Percentage:</label>
+                        <input value="{{detailObj.percentage}}"  style="width:60px;display:inline;"  type="text" class="form-control" ></input>
+                    </div>
+					<div class="form-group">
+                        <label >Due Date:</label>
+                        <label >{{detailObj.dueDate}}</label>
+                    </div>
+					<div class="form-group">
+                        <label >Completion Date :</label>
+                        <label >{{detailObj.completionDate}}</label>
+                    </div>
+					<div class="form-group">
+                        <label >Priority :</label>
+                        <label >{{detailObj.priority}}</label>
+                    </div>
+					<div class="form-group">
+                        <label >Remarks :</label>
+                        <label >{{detailObj.remarks}}</label>
+                    </div>
+                    
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" ng-model="modCompleted" /> Completed
+                        </label>
+                    </div>
+                    <button ng-disabled="!modCompleted" type="submit" class="btn btn-default" ng-click="updateTaskSubmit(modTaskId, modCompleted)">Submit</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </form>
+            </div>
         </div>
-    </script>
- -->
+    </div>
+</div>
