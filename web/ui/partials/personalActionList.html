@@ -52,7 +52,7 @@
 		            	ng-show="column.visible" 
 		            	sortable="column.field" 
 		            	class="{{column.field}}-content-td">
-			                {{data[column.field]}}
+			                {{data[column.field]|date}}
 		            </td>
 		            
 		        </tr>
@@ -103,7 +103,7 @@
                     </div>
                     <div class="form-group">
                         <label >Create Date:</label>
-                        <label >{{detailObj.createdDate}}</label>
+                        <label >{{detailObj.createdDate  | date: 'yyyy-MM-dd HH:mm:ss'}}</label>
                     </div>
                     <div class="form-group">
                         <label >Last Modified By:</label>
@@ -111,7 +111,7 @@
                     </div>
                     <div class="form-group">
                         <label >Last Modified Date:</label>
-                        <label >{{detailObj.lastModifiedDate}}</label>
+                        <label >{{detailObj.lastModifiedDate | date: 'yyyy-MM-dd HH:mm:ss'}}</label>
                     </div>
                     <div class="form-group">
                         <label >Post By:</label>
@@ -137,7 +137,7 @@
                     </div>
 					<div class="form-group">
                         <label >Due Date:</label>
-                        <label >{{detailObj.dueDate}}</label>
+                        <label >{{detailObj.dueDate | date: 'yyyy-MM-dd HH:mm:ss'}}</label>
                     </div>
 					<div class="form-group">
                         <label >Completion Date :</label>
@@ -150,12 +150,6 @@
 					<div class="form-group">
                         <label >Remarks :</label>
                         <label >{{detailObj.remarks}}</label>
-                    </div>
-                    
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox" ng-model="modCompleted" /> Completed
-                        </label>
                     </div>
                     <button ng-disabled="!modCompleted" type="submit" class="btn btn-default" ng-click="updateTaskSubmit(modTaskId, modCompleted)">Submit</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
