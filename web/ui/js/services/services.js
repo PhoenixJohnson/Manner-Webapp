@@ -181,12 +181,18 @@ TM.factory('Items', [ '$resource','TM.config', function($resource,config) {
             isArray : false,
             cache : false
         },
-        'query' : {
-        	url : config.RESTAPIBASEURL+'items',
-        	method : 'GET',
+        'save' : {
+			url:RESTAPIBASEURL+'/rest/items?userId=:userId&groupId=:groupId',
+			method : 'POST',
 			isArray : false,
-			cache : false },
-		'update' : {}
+			cache : false
+		},
+		'update' : {
+			url:RESTAPIBASEURL+'/rest/items/:id?userId=:userId&groupId=:groupId',
+			method : 'PUT',
+			isArray : false,
+			cache : false
+		}
 	});
 } ]);
 
@@ -194,11 +200,11 @@ TM.factory('Items', [ '$resource','TM.config', function($resource,config) {
 TM.factory('Report', [ '$resource','TM.config', function($resource,config) {
 	return $resource('', {}, {
 		'query' : {
-			url:config.RESTAPIBASEURL+'report',
+			url:config.RESTAPIBASEURL+'api/report',
 			method : 'GET',
 			params:{
-				userId:'@userId',
-				date:'@date'
+				userId:5,
+				date:2014-12-1
 			},
 			isArray : false,
 			cache : false
